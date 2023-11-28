@@ -1,0 +1,17 @@
+@import url(./fonts.css);
+
+:root {
+  --black: #1c1c1c;
+  --white: #fff;
+  --gray300: #b9b9b9;
+  --red: #ff3838;
+  --whitedest: #f0f0f0;
+  --font-medium: "Montserrat-Medium";
+  --font-s-bolde: "Montserrat-SemiBold";
+  --font-regular: "Montserrat-Regular";
+  --font-title: "MochiyPopOne-Regular";
+  --button-padding: 0.8rem;
+  --border-radius: 0.5rem;
+  --margin-container: 15rem;
+  --borda:2px;
+}

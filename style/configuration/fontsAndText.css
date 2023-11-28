@@ -1,0 +1,16 @@
+.font {
+  font-family: var(--font-title);
+}
+
+.txtmine {
+  font-size: smaller;
+}
+.txtgrand {
+  font-size: larger;
+}
+.gray_color {
+  color: var(--gray300);
+}
+.semibold {
+  font-family: var(--font-medium);
+}
