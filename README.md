@@ -1,4 +1,4 @@
-# The Blog 
+# news aggregations
 
 ## what is it ?
 <p>
