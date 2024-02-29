@@ -3,10 +3,9 @@ import { signUp } from "../config/signup.js";
 import { signIn } from "../config/signin.js";
 
 import { getArticlesWithLimit } from "../Http/get.js";
-import {articles} from "../config/watchArticles.js";
-getArticlesWithLimit()
-articles()
-
+import { articles } from "../config/watchArticles.js";
+getArticlesWithLimit();
+articles();
 
 function signUpH() {
   let name = document.getElementById("name_up").value;
@@ -34,50 +33,27 @@ window.document
     window.document.querySelector(".alert").classList.remove("ative");
   });
 
-
-
-
-
-  
-  
- 
-  window.document.querySelector('.id1').addEventListener('click',
-  function(){
-   
-   sessionStorage.setItem('id',1)
-    openUrl('details')
-  } )
-  window.document.querySelector('.id2').addEventListener('click',
-  function(){
-   
-   
-   sessionStorage.setItem('id',2)
-    openUrl('details')
-  } )
-  window.document.querySelector('.id3').addEventListener('click',
-  function(){
-    
-    sessionStorage.setItem('id',3)
-    openUrl('details')
-  } )
-  window.document.querySelector('.id4').addEventListener('click',
-  function(){
-    
-    sessionStorage.setItem('id',4)
-    openUrl('details')
-  } )
-  window.document.querySelector('.id5').addEventListener('click',
-  function(){
-    
-    sessionStorage.setItem('id',5)
-    openUrl('details')
-  } )
-  window.document.querySelector('.id6').addEventListener('click',
-  function(){
-    
-    sessionStorage.setItem('id',6)
-    openUrl('details')
-  } )
-
-
-  
+window.document.querySelector(".id1").addEventListener("click", function () {
+  sessionStorage.setItem("id", 1);
+  openUrl("details");
+});
+window.document.querySelector(".id2").addEventListener("click", function () {
+  sessionStorage.setItem("id", 2);
+  openUrl("details");
+});
+window.document.querySelector(".id3").addEventListener("click", function () {
+  sessionStorage.setItem("id", 3);
+  openUrl("details");
+});
+window.document.querySelector(".id4").addEventListener("click", function () {
+  sessionStorage.setItem("id", 4);
+  openUrl("details");
+});
+window.document.querySelector(".id5").addEventListener("click", function () {
+  sessionStorage.setItem("id", 5);
+  openUrl("details");
+});
+window.document.querySelector(".id6").addEventListener("click", function () {
+  sessionStorage.setItem("id", 6);
+  openUrl("details");
+});

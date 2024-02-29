@@ -1,24 +1,22 @@
-import { openUrl } from "../config/openUrl.js"; 
+import { openUrl } from "../config/openUrl.js";
 
- if (!sessionStorage.getItem('id')){
-     openUrl('home')
-    
- }
+if (!sessionStorage.getItem("id")) {
+  openUrl("home");
+}
 
- export function  article(){  
-         
-     
-        let id = sessionStorage.getItem('id')
-        fetch(`http://localhost:3000/articles/${id}`)
-         .then(response => response.json())
-         .then(articles => sessionStorage.setItem('article',JSON.stringify(articles)))
-         
-         let arcticle = JSON.parse(sessionStorage.getItem('article'))
+export function article() {
+  let id = sessionStorage.getItem("id");
+  fetch(`http://localhost:3000/articles/${id}`)
+    .then((response) => response.json())
+    .then((articles) =>
+      sessionStorage.setItem("article", JSON.stringify(articles))
+    );
 
-         let container1 = window.document.querySelector('#article')
+  let arcticle = JSON.parse(sessionStorage.getItem("article"));
 
+  let container1 = window.document.querySelector("#article");
 
-         let articleHtml = `
+  let articleHtml = `
          <div class="cont2">
         <div class="description">
           <h1 class="txtgrand semibold">
@@ -51,26 +49,17 @@ import { openUrl } from "../config/openUrl.js";
         </div>
       </div>
          
-         `
+         `;
 
-        container1.innerHTML = articleHtml
-   
-          
-         let number = localStorage.getItem('number')
-  
- if (number == 1) {
-  location.reload()
+  container1.innerHTML = articleHtml;
 
-  localStorage.setItem('number', null)
- }
+  let number = localStorage.getItem("number");
 
-       
- }
+  if (number == 1) {
+    location.reload();
 
-article()
+    localStorage.setItem("number", null);
+  }
+}
 
-
-
-
-
-
+article();

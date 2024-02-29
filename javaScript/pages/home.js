@@ -1,10 +1,9 @@
 document.querySelector(".alert").classList.remove("ative");
 import { getArticlesWithLimit } from "../Http/get.js";
-import {articles} from "../config/watchArticles.js";
+import { articles } from "../config/watchArticles.js";
 
-
-getArticlesWithLimit()
-articles()
+getArticlesWithLimit();
+articles();
 let local = localStorage.getItem("session");
 
 if (!local) {
@@ -46,14 +45,3 @@ window.document
   .addEventListener("click", function () {
     window.document.querySelector(".alert").classList.remove("ative");
   });
-
- 
-
-
-
- 
-
-    
-
-
-  

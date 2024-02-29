@@ -1,10 +1,9 @@
-import { openUrl } from "./javaScript/config/openUrl.js"
+import { openUrl } from "./javaScript/config/openUrl.js";
 
-let local = localStorage.getItem('session')
+let local = localStorage.getItem("session");
 
 if (!local) {
-     openUrl('home')  
-       
-}else{
- openUrl('User_authenticated')  
+  openUrl("home");
+} else {
+  openUrl("User_authenticated");
 }

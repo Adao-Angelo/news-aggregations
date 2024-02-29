@@ -1,11 +1,7 @@
-import {  openUrl  } from "./openUrl.js";
+import { openUrl } from "./openUrl.js";
 
-export function logout(){
+export function logout() {
+  localStorage.removeItem("session");
 
-    localStorage.removeItem('session')
-     
-    openUrl('home')
-    
-    
-
+  openUrl("home");
 }

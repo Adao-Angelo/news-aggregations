@@ -1,5 +1,3 @@
-
-
 const guides = document.querySelectorAll(".container_sima .guide");
 const filtersElement = document.querySelector(".top2 #search");
 filtersElement.addEventListener("input", filtersCard);
@@ -22,12 +20,10 @@ function filtersCard(element) {
   }
 }
 
-
 const guidesS = document.querySelectorAll(".container_sima .guide");
 const filtersElementS = document.querySelector(".top2 #sources");
 filtersElementS.addEventListener("input", filtersCardS);
 function filtersCardS(element) {
-  
   if (filtersElementS.value != "") {
     for (let guide of guidesS) {
       let title = guide.querySelector(".author");
@@ -36,7 +32,6 @@ function filtersCardS(element) {
       if (!title.includes(filterstext)) {
         guide.style.display = "none";
       } else {
-       
       }
     }
   } else {
@@ -52,7 +47,6 @@ const filtersElementC = document.querySelector(".top2 #categories");
 filtersElementC.addEventListener("input", filtersCardC);
 
 function filtersCardC(element) {
- 
   if (filtersElementC.value != "") {
     for (let guide of guidesC) {
       let title = guide.querySelector(".categoryF");
@@ -61,7 +55,6 @@ function filtersCardC(element) {
       if (!title.includes(filterstext)) {
         guide.style.display = "none";
       } else {
-       
       }
     }
   } else {
@@ -77,17 +70,15 @@ const filtersElementD = document.querySelector(".top2 #date");
 filtersElementD.addEventListener("input", filtersCardD);
 
 function filtersCardD(element) {
- 
   if (filtersElementD.value != "") {
     for (let guide of guidesD) {
       let title = guide.querySelector(".date");
       title = title.textContent.toLowerCase();
-      let filterstext = String(filtersElementD.value.toLowerCase()) 
-      console.log(filterstext)
+      let filterstext = String(filtersElementD.value.toLowerCase());
+      console.log(filterstext);
       if (!title.includes(filterstext)) {
         guide.style.display = "none";
       } else {
-       
       }
     }
   } else {
@@ -96,6 +87,3 @@ function filtersCardD(element) {
     }
   }
 }
-
-
-
