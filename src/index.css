@@ -1,14 +1,14 @@
 @import url("./assets/fonts/Montserrat/importFont.css");
 @import url("./assets/fonts/Mochiy/importFont.css");
-
+@import url("./assets/ui/index.css");
 :root {
-  font-family: "Mt-regular", sans-serif;
-  font-weight: 400;
-  color: #1c1c1c;
-  background-color: #f2f2f2;
   --gray200: #6b6b6b;
   --gray10: #f2f2f2;
+  --background: #f2f2f2;
   --black: #1c1c1c;
+  font-family: "Mt-regular", sans-serif;
+  color: var(--black);
+  background: var(--background);
 }
 
 * {
@@ -20,4 +20,14 @@
 a {
   display: block;
   text-decoration: none;
+}
+
+p,
+span,
+a {
+  font-size: 14px;
+}
+
+li {
+  list-style: none;
 }

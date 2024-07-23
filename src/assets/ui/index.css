@@ -1,0 +1,55 @@
+/*---------- UI kit Font size --------*/
+
+.size-14 {
+  font-size: 14px;
+}
+.size-16 {
+  font-size: 16px;
+}
+.size-18 {
+  font-size: 18px;
+}
+
+/*---------- UI kit Font Family --------*/
+
+.f-regular {
+  font-family: "Mt-regular";
+}
+
+.f-bold {
+  font-family: "Mt-bold";
+}
+
+.f-light {
+  font-family: "Mt-light";
+}
+
+.f-italic {
+  font-family: "Mt-italic";
+}
+
+.f-medium {
+  font-family: "Mt-medium";
+}
+
+.f-extrabold {
+  font-family: "Mt-extrabold";
+}
+
+/*---------- UI kit Font color  -------------*/
+
+.color-gray200 {
+  color: var(--gray200);
+}
+
+.color-gray10 {
+  color: var(--gray10);
+}
+
+.color-black {
+  color: var(--black);
+}
+
+.color-background {
+  color: var(--background);
+}

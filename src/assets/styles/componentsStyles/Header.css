@@ -1,0 +1,40 @@
+.header-component {
+  display: flex;
+  padding: 16px 160px;
+  border-bottom: 1px solid var(--black);
+  justify-content: space-between;
+  align-self: center;
+}
+
+.header-component menu {
+  display: flex;
+  align-self: center;
+  gap: 32px;
+}
+
+.header-component menu ul {
+  display: flex;
+  align-self: center;
+  gap: 18px;
+}
+
+.signInOrSignUp {
+  display: flex;
+  gap: 8px;
+  align-self: center;
+}
+
+.signInOrSignUp a {
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+.signInOrSignUp a:nth-child(1) {
+  background: #ffffff00;
+  color: var(--gray200);
+}
+
+.signInOrSignUp a:nth-child(2) {
+  background: var(--black);
+  color: var(--background);
+}
