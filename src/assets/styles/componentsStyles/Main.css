@@ -1,5 +1,23 @@
+.top-main {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.top-main .filter-btn {
+  padding: 16px;
+  border-radius: 6px;
+  border: 2px solid var(--stroke);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-main .filter-btn svg {
+  display: block;
+}
 .main-container {
-  padding: 74px 160px 125px;
+  padding: 164px 160px 125px;
 }
 
 .container-articles {
