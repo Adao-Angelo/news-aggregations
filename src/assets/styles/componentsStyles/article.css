@@ -1,0 +1,25 @@
+.article-container {
+  min-width: 360px;
+}
+
+.article-container .article-image img {
+  width: 100%;
+  height: 315px;
+  object-fit: cover;
+  border: 2px solid var(--black);
+}
+
+.article-container .article-image {
+  margin: 0px 0px 17px 0px;
+}
+
+.article-container .article-description {
+  margin: 18px 0px 38px 0px;
+}
+
+.article-container .article-information {
+  display: flex;
+  border-top: 2px solid var(--black);
+  justify-content: space-between;
+  padding: 16px 0px 16px 0px;
+}

@@ -16,7 +16,7 @@ export default function NotFound() {
         Oops! The page you are looking for does not exist. It might have been
         moved or deleted.
       </p>
-      <Link to="/" className="home-link">
+      <Link to="/" className="home-link f-medium">
         Go to Home
       </Link>
     </div>

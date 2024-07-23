@@ -1,0 +1,10 @@
+.main-container {
+  padding: 74px 160px 125px;
+}
+
+.container-articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 72px;
+  gap: 20px;
+}

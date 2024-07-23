@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import Header from "../components/Header.component";
+import Main from "../components/main.component";
 import "../assets/styles/pagesStyles/home.css";
 export default function Home() {
   useEffect(() => {
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Header></Header>
+      <Main></Main>
     </>
   );
 }

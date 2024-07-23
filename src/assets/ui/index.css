@@ -9,6 +9,15 @@
 .size-18 {
   font-size: 18px;
 }
+.size-40 {
+  font-size: 40px;
+}
+.size-20 {
+  font-size: 20px;
+}
+.size-13 {
+  font-size: 13px;
+}
 
 /*---------- UI kit Font Family --------*/
 
@@ -34,6 +43,14 @@
 
 .f-extrabold {
   font-family: "Mt-extrabold";
+}
+
+.f-semibold {
+  font-family: "Mt-semibold";
+}
+
+.f-Mc {
+  font-family: "Mc-regular";
 }
 
 /*---------- UI kit Font color  -------------*/

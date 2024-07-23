@@ -7,7 +7,10 @@
   font-family: "Mt-medium";
   src: url("./static/Montserrat-Medium.ttf");
 }
-
+@font-face {
+  font-family: "Mt-semibold";
+  src: url("./static/Montserrat-SemiBold.ttf");
+}
 @font-face {
   font-family: "Mt-bold";
   src: url("./static/Montserrat-Bold.ttf");
