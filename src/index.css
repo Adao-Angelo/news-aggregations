@@ -6,7 +6,18 @@
   font-weight: 400;
   color: #1c1c1c;
   background-color: #f2f2f2;
+  --gray200: #6b6b6b;
+  --gray10: #f2f2f2;
+  --black: #1c1c1c;
+}
+
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+}
+
+a {
+  display: block;
+  text-decoration: none;
 }
