@@ -1,38 +1,30 @@
-# news aggregations
+# React + TypeScript + Vite
 
-## what is it ?
-<p>
-  I was given a challenge and it is complete.  this is a challenge that was made by @Antonio-Gabriel.
-</p>
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-## Experience to develop the codes  
-<p>
-    Working with json-server was one of the things that I liked I liked I developed this project with him I learned how to make it that was something that gave me motivation to continue in the world of programming
-</p>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Expanding the ESLint configuration
 
-## Create At
-     12-05-2023 : This is the date I created this project
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
+- Configure the top-level `parserOptions` property like this:
 
-     
-##  used technology 
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-<div>
-   <img src= "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt ="html5">
-    <img src= "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt ="Css3">
-     <img src= "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=blackk" alt ="javascript">
-</div>
-
-
-## status projest
-
-This project is not yet ready for production because the data is saved to the JSON Server and not to a database.  This will be done soon 
-
-### How to initialize the project
-    npx json-server --watch /db.json
-
-### Open in navegador 
-     server roaming in  http://localhost:3000
-
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
