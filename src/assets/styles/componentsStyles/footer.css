@@ -1,0 +1,39 @@
+.footer-component {
+  text-align: center;
+  padding: 61px 0px 82px 0px;
+  border-top: 2px solid var(--black);
+}
+.input-email-box {
+  position: relative;
+  margin: 35px auto 32px;
+  width: 360px;
+}
+
+.footer-component .address-input-email {
+  border: 2px solid var(--black);
+  padding: 19px 22px;
+  width: 100%;
+  color: var(--black);
+}
+
+.footer-component .address-input-email::placeholder {
+  color: var(--black);
+}
+.input-email-box svg {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  font-size: 25px;
+}
+
+.address {
+  display: flex;
+  width: 222px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.footer-component .info {
+  margin: 67px 0px 0px 0px;
+}

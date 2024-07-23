@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 import Header from "../components/Header.component";
 import Main from "../components/main.component";
+import Footer from "../components/footer.component";
+
 import "../assets/styles/pagesStyles/home.css";
 export default function Home() {
   useEffect(() => {
@@ -11,6 +13,7 @@ export default function Home() {
     <>
       <Header></Header>
       <Main></Main>
+      <Footer></Footer>
     </>
   );
 }

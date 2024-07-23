@@ -1,5 +1,6 @@
 import "../assets/styles/componentsStyles/Main.css";
 import Article from "./article.component";
+import Pagination from "./pagination.component";
 export default function Main() {
   return (
     <>
@@ -13,6 +14,9 @@ export default function Main() {
           <Article></Article>
           <Article></Article>
         </section>
+        <div className="container-pagination">
+          <Pagination></Pagination>
+        </div>
       </main>
     </>
   );

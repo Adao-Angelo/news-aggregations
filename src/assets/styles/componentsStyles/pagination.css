@@ -1,0 +1,21 @@
+.pagination-container {
+  margin: 96px 0px 125px 0px;
+}
+
+.pagination-container ul {
+  display: flex;
+  font-size: 18px;
+  margin: auto;
+  width: 166px;
+  justify-content: space-between;
+  align-items: center;
+}
+.pagination-container ul li a {
+  color: var(--black);
+}
+
+.pagination-container ul svg {
+  cursor: pointer;
+  display: block;
+  color: var(--black);
+}
