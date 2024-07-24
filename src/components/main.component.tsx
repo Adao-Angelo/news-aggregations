@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import "../assets/styles/componentsStyles/Main.css";
 import { useSpring, animated } from "@react-spring/web";
-
-import Article from "./article.component";
+import Articles from "./articles";
 import Pagination from "./pagination.component";
 import { HiOutlineFilter } from "react-icons/hi";
 
@@ -48,20 +47,12 @@ export default function Main() {
             show filter
           </Link>
         </div>
-
         <animated.div style={props}>
           {isVisible && <Filter></Filter>}
           {!isVisible && <Filter></Filter>}
         </animated.div>
+        <Articles></Articles>
 
-        <section className="container-articles">
-          <Article></Article>
-          <Article></Article>
-          <Article></Article>
-          <Article></Article>
-          <Article></Article>
-          <Article></Article>
-        </section>
         <div className="container-pagination">
           <Pagination></Pagination>
         </div>
