@@ -1,0 +1,20 @@
+.offline-alert {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  background: #ffffff88;
+  color: var(--red);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px #0000001a;
+  z-index: 100;
+  border-radius: 5px;
+  border: 1px solid var(--red);
+}
+
+.offline-alert svg {
+  color: var;
+}
