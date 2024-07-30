@@ -12,7 +12,7 @@ export default function Articles() {
   useEffect(() => {
     axios
       .get(
-        "https://newsdata.io/api/1/latest?apikey=pub_49276d50a41a3f117829b855acb6c3733d991&q=Angola"
+        "https://newsdata.io/api/1/latest?apikey=pub_49276d50a41a3f117829b855acb6c3733d991&q=today"
       )
 
       .then((response) => {
@@ -31,7 +31,7 @@ export default function Articles() {
           <LoadingArticles></LoadingArticles>
         ) : (
           articles.map((article) => (
-            <Article key={article.article_id}></Article>
+            <Article key={article.article_id} article={article}></Article>
           ))
         )}
       </section>
