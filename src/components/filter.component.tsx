@@ -1,17 +1,13 @@
 import "../assets/styles/componentsStyles/filter.css";
 
+import SearchInputComponent from "./searchArticleInputFilter";
+
 export default function Filter() {
   return (
     <section className="container-filter">
       <aside className="inputs-filter-box">
         <div className="search-article-box ">
-          <input
-            className="size-12 f-regular"
-            type="search"
-            name="search-article-input"
-            id="search-article-input"
-            placeholder="Search-article-input..."
-          />
+          <SearchInputComponent></SearchInputComponent>
         </div>
 
         <div className="filter-sources">
