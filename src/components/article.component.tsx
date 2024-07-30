@@ -1,5 +1,5 @@
 import "../assets/styles/componentsStyles/article.css";
-export default function Article({ article }: any) {
+export default function Article() {
   return (
     <>
       <article className="article-container">

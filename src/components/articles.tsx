@@ -1,7 +1,10 @@
 import Article from "./article.component";
 
 import { useState, useEffect } from "react";
+
 import axios from "axios";
+
+import LoadingArticles from "./loadingArticles.component";
 export default function Articles() {
   const [articles, setMovies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -25,10 +28,10 @@ export default function Articles() {
     <>
       <section className="container-articles">
         {loading ? (
-          <p>Loading...</p>
+          <LoadingArticles></LoadingArticles>
         ) : (
           articles.map((article) => (
-            <Article key={article.article_id} article={article}></Article>
+            <Article key={article.article_id}></Article>
           ))
         )}
       </section>
