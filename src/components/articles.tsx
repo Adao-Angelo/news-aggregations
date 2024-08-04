@@ -20,7 +20,7 @@ export default function Articles() {
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error on request articles Data");
+        console.error("Error on request articles Data", error);
       });
   }, [filterUrl]);
 

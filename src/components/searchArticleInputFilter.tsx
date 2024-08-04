@@ -1,7 +1,7 @@
 import { useFilter } from "../utils/filterContext";
 
 export default function SearchInputComponent() {
-  const { filterUrl, setFilterUrl } = useFilter();
+  const { setFilterUrl } = useFilter();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilterUrl(event.target.value);
