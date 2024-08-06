@@ -12,10 +12,7 @@ export default function ArticleDetails() {
           <p className="article-date size-13">12/05/2022 13:40</p>
         </aside>
         <div className="article-image">
-          <img
-            src="https://fatstacksblog.com/wp-content/uploads/2019/11/Person-writing-article-nov26.jpg"
-            alt="Article Image"
-          />
+          <img src="/Logo.svg" alt="Article Image" />
         </div>
 
         <aside className="article-description ">

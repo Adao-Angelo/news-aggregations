@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
+import UserSigned from "./userSigned";
 
 import Logo from "/Logo.svg";
 import "../assets/styles/componentsStyles/Header.css";
 
 export default function Header() {
+  const login = true;
+
   return (
     <header className="header-component">
       <menu className="f-medium">
         <section className="logo">
-          <img src={Logo} alt="Logo" />
+          <Link to="/">
+            <img src={Logo} alt="Logo" />
+          </Link>
         </section>
         <ul>
           <li>
@@ -23,10 +28,15 @@ export default function Header() {
           </li>
         </ul>
       </menu>
-      <section className="signInOrSignUp f-medium">
-        <Link to="/sign-in">Sign In</Link>
-        <Link to="/sign-up">Sign Up</Link>
-      </section>
+
+      {login ? (
+        <UserSigned></UserSigned>
+      ) : (
+        <section className="signInOrSignUp f-medium">
+          <Link to="/sign-in">Sign In</Link>
+          <Link to="/sign-up">Sign Up</Link>
+        </section>
+      )}
     </header>
   );
 }
