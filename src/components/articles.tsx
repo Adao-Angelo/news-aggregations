@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LoadingArticles from "./loadingArticles.component";
 import { useFilter } from "../utils/filterContext"; // Import the useFilter hook
+import { baseUrl } from "../utils/baseUrl";
 
-//https://newsdata.io/api/1/latest?apikey ?pub_49276d50a41a3f11782929b855acb6c37d991&q-Y-QUERY&page
 export default function Articles() {
   const [articles, setMovies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -12,9 +12,7 @@ export default function Articles() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://newsdata.io/api/1/latest?apikey=pub_49276d50a41a3f117829b855acb6c3733d991&q=${filterUrl}`
-      )
+      .get(`${baseUrl}${"Home"}`)
       .then((response) => {
         setMovies(response.data.results);
         setLoading(false);

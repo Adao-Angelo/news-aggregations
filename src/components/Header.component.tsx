@@ -3,10 +3,13 @@ import UserSigned from "./userSigned";
 
 import Logo from "/Logo.svg";
 import "../assets/styles/componentsStyles/Header.css";
+let IsLogin = true;
+
+export function changeLogin() {
+  IsLogin = false;
+}
 
 export default function Header() {
-  const login = true;
-
   return (
     <header className="header-component">
       <menu className="f-medium">
@@ -29,7 +32,7 @@ export default function Header() {
         </ul>
       </menu>
 
-      {login ? (
+      {IsLogin ? (
         <UserSigned></UserSigned>
       ) : (
         <section className="signInOrSignUp f-medium">

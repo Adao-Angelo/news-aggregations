@@ -1,7 +1,8 @@
 import { useFilter } from "../utils/filterContext";
 
 export default function SearchInputComponent() {
-  const { setFilterUrl } = useFilter();
+  const { filterUrl, setFilterUrl } = useFilter();
+  let inputValue = filterUrl;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilterUrl(event.target.value);
@@ -14,6 +15,7 @@ export default function SearchInputComponent() {
           e.preventDefault();
           handleChange(e);
         }}
+        value={inputValue}
         className="size-12 f-regular"
         type="search"
         name="search-article-input"
