@@ -1,3 +1,4 @@
+import { FilterIcon } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
 export default function Filter() {
@@ -45,7 +46,7 @@ export default function Filter() {
               : "border-stroke text-grayDark"
           }`}
         >
-          Show filters
+          <FilterIcon></FilterIcon> Show filters
         </button>
       </div>
       {searchParams.get("filterIsOpen") === "true" ? (
