@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../assets/styles/componentsStyles/article.css";
 
 export default function Article(newArticle: any) {
   const [hoveredIndex, setHoveredIndex] = useState(null);

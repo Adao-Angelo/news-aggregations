@@ -1,4 +1,3 @@
-import "../assets/styles/pagesStyles/About.css";
 import RootLayout from "./Layout";
 
 export default function About() {

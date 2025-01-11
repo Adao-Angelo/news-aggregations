@@ -1,4 +1,3 @@
-import "../assets/styles/pagesStyles/home.css";
 import Articles from "../components/articles";
 import Filter from "../components/filter.component";
 import RootLayout from "./Layout";

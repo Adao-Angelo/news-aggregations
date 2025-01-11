@@ -31,8 +31,8 @@ export default function Filter() {
         }`}
       >
         <div>
-          <h1 className="text-[4rem]">
-            Articles{" "}
+          <h1 className="font-popOne text-[4rem]">
+            Articles
             <span className="text-[1.6rem] text-grayDark">100 results</span>
           </h1>
         </div>

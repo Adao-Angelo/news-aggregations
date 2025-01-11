@@ -10,7 +10,7 @@ export default function Articles() {
     <>
       <section className="grid  grid-cols-3 gap-[2rem]">
         {loading ? (
-          <LoadingArticles></LoadingArticles>
+          <LoadingArticles count={10}></LoadingArticles>
         ) : (
           articles.map((article) => (
             <Article key={article.article_id} article={article}></Article>
