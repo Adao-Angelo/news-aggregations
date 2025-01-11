@@ -1,9 +1,9 @@
+import { animated, useSpring } from "@react-spring/web";
+import { HiOutlineFilter } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "../assets/styles/componentsStyles/Main.css";
-import { useSpring, animated } from "@react-spring/web";
 import Articles from "./articles";
 import Pagination from "./pagination.component";
-import { HiOutlineFilter } from "react-icons/hi";
 
 import Filter from "./filter.component";
 
