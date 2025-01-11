@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export default function Filter() {
@@ -21,14 +20,6 @@ export default function Filter() {
       });
     }
   };
-
-  useEffect(() => {
-    setSearchParams((params) => {
-      params.set("filterIsOpen", "false");
-
-      return params;
-    });
-  }, []);
 
   return (
     <section>
