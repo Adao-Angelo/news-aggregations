@@ -4,15 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 2000 ",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@lottiefiles/react-lottie-player": "^3.5.4",
     "@react-spring/web": "^9.7.4",
-    "@types/axios": "^0.14.0",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "lottie-react": "^2.4.0",
@@ -22,7 +20,6 @@
     "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
