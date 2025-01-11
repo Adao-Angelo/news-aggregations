@@ -1,20 +1,9 @@
 import { useState } from "react";
-import "../assets/styles/componentsStyles/userSigned.css";
-import { useSpring, animated } from "@react-spring/web";
 import { FaArrowDownLong } from "react-icons/fa6";
-import { changeLogin } from "./Header.component";
+import "../assets/styles/componentsStyles/userSigned.css";
 
 export default function UserSigned() {
   const [isVisibleLogout, setIsVisibleLogout] = useState(false);
-
-  const props = useSpring({
-    from: { opacity: 0, display: "none" },
-    to: {
-      opacity: isVisibleLogout ? 1 : 0,
-      display: isVisibleLogout ? "block" : "none",
-    },
-    config: { duration: 300 },
-  });
 
   const toggleVisibility = () => {
     setIsVisibleLogout(!isVisibleLogout);
@@ -35,13 +24,7 @@ export default function UserSigned() {
           </div>
           <FaArrowDownLong />
         </aside>
-        <animated.div
-          style={props}
-          onClick={() => {
-            changeLogin();
-            alert("logout");
-          }}
-        >
+        <div onClick={() => {}}>
           {isVisibleLogout && (
             <aside className="logout">
               <p className="f-medium size-14">logout</p>
@@ -52,7 +35,7 @@ export default function UserSigned() {
               <p className="f-medium size-14">logout</p>
             </aside>
           )}
-        </animated.div>
+        </div>
       </section>
     </>
   );

@@ -1,41 +1,42 @@
-import { useEffect } from "react";
 import "../assets/styles/pagesStyles/About.css";
-import Header from "../components/Header.component";
-import Footer from "../components/footer.component";
+import RootLayout from "./Layout";
 
 export default function About() {
-  useEffect(() => {
-    document.title = "News Aggregator | About us";
-  }, []);
-
   return (
     <>
-      <Header />
-      <section className="container-about-description">
-        <p className="f-Mc size-32">About News Aggregator</p>
+      <RootLayout>
+        <section className="px-[25.5rem] py-[8.2rem] grid gap-[3rem]">
+          <p className="font-bold text-[3.2rem]">About News Aggregator</p>
 
-        <p className="size-18 f-semibold">Overview</p>
-        <p className="size-16">
-          Welcome to News Aggregator, your number one source for the latest news
-          articles from around the world. We're dedicated to providing you the
-          best of news, with a focus on reliability, accessibility, and
-          comprehensiveness.
-        </p>
-        <p className="size-18 f-semibold">Our Mission</p>
-        <p className="size-16">
-          Our mission is to provide a platform for people to discover and engage
-          with high-quality news and articles from a variety of sources.
-        </p>
-        <p className="size-18 f-semibold">History</p>
-        <p className="size-16">
-          News Aggregator was founded in 2020 with the goal of creating a
-          platform that aggregates high-quality news and articles from around
-          the web.
-        </p>
+          <div>
+            <p className="text-[2rem] font-semibold mb-[1rem]">Overview</p>
+            <p className="text-[1.6rem]">
+              Welcome to News Aggregator, your number one source for the latest
+              news articles from around the world. We're dedicated to providing
+              you the best of news, with a focus on reliability, accessibility,
+              and comprehensiveness.
+            </p>
+          </div>
+          <div>
+            <p className="text-[2rem] font-semibold mb-[1rem]">Our Mission</p>
+            <p className="text-[1.6rem]">
+              Our mission is to provide a platform for people to discover and
+              engage with high-quality news and articles from a variety of
+              sources.
+            </p>
+          </div>
+          <div>
+            <p className="text-[2rem] font-semibold mb-[1rem]">History</p>
+            <p className="text-[1.6rem]">
+              News Aggregator was founded in 2020 with the goal of creating a
+              platform that aggregates high-quality news and articles from
+              around the web.
+            </p>
+          </div>
 
-        <p className="f-Mc size-18">Thanks !!!</p>
-      </section>
-      <Footer />
+          <p className="f-Mc text-[1.8rem]">Thanks !!!</p>
+        </section>
+      </RootLayout>
     </>
   );
 }

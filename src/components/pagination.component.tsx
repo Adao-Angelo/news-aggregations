@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import "../assets/styles/componentsStyles/pagination.css";
 
-import { FaAngleRight } from "react-icons/fa6";
-import { FaAngleLeft } from "react-icons/fa6";
-
-// interface IPaginationParams {
-//   currentPage: string;
-//   totalPages: string;
-// }
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 export default function Pagination() {
   return (
