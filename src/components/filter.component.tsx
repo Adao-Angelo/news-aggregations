@@ -1,3 +1,4 @@
+import { FilterIcon } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
 export default function Filter() {
@@ -31,20 +32,27 @@ export default function Filter() {
         }`}
       >
         <div>
-          <h1 className="text-[4rem]">
-            Articles{" "}
+          <h1 className="font-popOne text-[4rem]">
+            Articles
             <span className="text-[1.6rem] text-grayDark">100 results</span>
           </h1>
         </div>
 
         <button
           onClick={changeFilterVisibility}
-          className={`p-[1.6rem] text-[1.4rem] rounded-[0.6rem] border-[0.2rem] ${
+          className={`p-[1.6rem] text-[1.4rem] flex gap-[0.8rem]  rounded-[0.6rem] border-[0.2rem] ${
             searchParams.get("filterIsOpen") === "true"
-              ? " border-primaryBlack text-primaryBlack"
+              ? " border-primaryBlack text-primaryBlack font-semibold"
               : "border-stroke text-grayDark"
           }`}
         >
+          <FilterIcon
+            className={`w-[1.6rem] ${
+              searchParams.get("filterIsOpen") === "true"
+                ? " text-primaryBlack"
+                : " text-grayDark"
+            }`}
+          ></FilterIcon>{" "}
           Show filters
         </button>
       </div>

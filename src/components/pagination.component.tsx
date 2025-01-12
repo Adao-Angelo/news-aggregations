@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../assets/styles/componentsStyles/pagination.css";
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 

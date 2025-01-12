@@ -11,6 +11,10 @@ export default {
         primaryBlack: "#1c1c1c",
         vibrantRed: "#df4a4a",
       },
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+        popOne: ["PopOne", "cursive"],
+      },
     },
   },
   plugins: [],

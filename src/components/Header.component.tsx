@@ -5,7 +5,7 @@ let isLogged = true;
 
 export default function Header() {
   return (
-    <header className="top-0 fixed w-screen px-[16rem] bg-grayLight border-b border-primaryBlack py-[1.6rem] text-[1.4rem] flex justify-between items-center">
+    <header className="top-0 z-10 fixed w-screen px-[16rem] bg-grayLight border-b border-primaryBlack py-[1.6rem] text-[1.4rem] flex justify-between items-center">
       <menu className="flex items-center gap-[3.6rem]">
         <section>
           <Link to="/">
