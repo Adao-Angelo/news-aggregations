@@ -1,20 +1,14 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
-interface PaginationProps {
-  totalPages: number;
-}
-
-export default function Pagination({ totalPages }: PaginationProps) {
+export default function Pagination() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
-
-  const urlTotalPages = parseInt(searchParams.get("totalPages") || "1", 10);
-  const effectiveTotalPages = totalPages || urlTotalPages;
+  const hasNextPage = searchParams.get("hasNextPage") === "true";
 
   const handlePageClick = (page: number) => {
-    if (page >= 1 && page <= effectiveTotalPages) {
+    if (page >= 1) {
       const newParams = new URLSearchParams(searchParams);
       newParams.set("page", String(page));
       setSearchParams(newParams);
@@ -38,30 +32,18 @@ export default function Pagination({ totalPages }: PaginationProps) {
           </button>
         </li>
 
-        {Array.from(
-          { length: effectiveTotalPages },
-          (_, index) => index + 1
-        ).map((page) => (
-          <li key={page}>
-            <button
-              onClick={() => handlePageClick(page)}
-              className={`px-[1rem] py-[1.1rem] text-[1.2rem] rounded ${
-                currentPage === page
-                  ? "bg-primaryBlack text-white font-medium"
-                  : "hover:bg-gray-100"
-              }`}
-            >
-              {page}
-            </button>
-          </li>
-        ))}
+        <li>
+          <button className="px-[1rem] py-[1.1rem] text-[1.2rem] rounded bg-primaryBlack text-white font-medium cursor-default">
+            {currentPage}
+          </button>
+        </li>
 
         <li>
           <button
             onClick={() => handlePageClick(currentPage + 1)}
-            disabled={currentPage === effectiveTotalPages}
+            disabled={!hasNextPage}
             className={`p-2 rounded ${
-              currentPage === effectiveTotalPages
+              !hasNextPage
                 ? "text-gray-400 cursor-not-allowed"
                 : "hover:bg-gray-100"
             }`}

@@ -7,13 +7,25 @@ import Article from "./article.component";
 import LoadingArticles from "./loadingArticles.component";
 
 export default function Articles() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const updateUrlState = (key: string, value: string) => {
+    setSearchParams((params) => {
+      if (value) {
+        params.set(key, value);
+      } else {
+        params.delete(key);
+      }
+      return params;
+    });
+  };
 
   const filters = {
     category: searchParams.get("category") || "",
     source: searchParams.get("source") || "",
     title: searchParams.get("search") || "",
     date: searchParams.get("date") || "",
+    page: searchParams.get("page") || "1",
   };
 
   const { data, isLoading, isError } = useQuery<
@@ -23,7 +35,13 @@ export default function Articles() {
     Error
   >(
     ["articles", filters],
-    async () => await ArticlesServices.fetchArticles(filters),
+    async () => {
+      const response = await ArticlesServices.fetchArticles(filters);
+
+      updateUrlState("hasNextPage", String(response.has_next_pages));
+
+      return response;
+    },
     {
       refetchOnMount: false,
       refetchOnWindowFocus: false,
