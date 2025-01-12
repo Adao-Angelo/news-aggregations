@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import UserSigned from "./userSigned";
 
-let isLogged = true;
+let isLogged = false;
 
 export default function Header() {
   return (
