@@ -30,7 +30,6 @@ export default function About() {
           </div>
           <div>
             <p className="text-[2rem] font-semibold mb-[1rem]">History</p>
-
             <p className="text-[1.6rem]">
               News Aggregator was founded in 2020 with the goal of creating a
               platform that aggregates high-quality news and articles from
