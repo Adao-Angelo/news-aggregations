@@ -1,12 +1,14 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL:
+    import.meta.env.VITE_API_BASE_URL ||
+    "api_live_tFY2u5eefYBWxENhiz5zEhft0ZjIkMCSUP4vIIsjWKdaEYt",
 });
 
 api.interceptors.request.use(
   (config) => {
-    const apiKey = import.meta.env.VITE_API_TUBE_KEY;
+    const apiKey = import.meta.env.VITE_API_TUBE_KEY || "/api/v1/news";
 
     config.params = {
       ...config.params,
