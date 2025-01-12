@@ -1,35 +1,9 @@
-@import url("./assets/fonts/Montserrat/importFont.css");
-@import url("./assets/fonts/Mochiy/importFont.css");
-@import url("./assets/ui/index.css");
-:root {
-  --gray200: #6b6b6b;
-  --gray10: #f2f2f2;
-  --stroke: #e0e0e0;
-  --background: #f2f2f2;
-  --black: #1c1c1c;
-  --red: #df4a4a;
-  font-family: "Mt-regular", sans-serif;
-  color: var(--black);
-  background: var(--background);
-}
+@import "./assets/fonts/fonts.css";
 
-* {
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  display: block;
-  text-decoration: none;
-}
-
-p,
-span,
-a {
-  font-size: 14px;
-}
-
-li {
-  list-style: none;
+html {
+  font-size: 62.5%;
 }

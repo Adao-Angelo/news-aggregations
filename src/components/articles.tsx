@@ -1,37 +1,45 @@
 import Article from "./article.component";
-import { useState, useEffect } from "react";
-import axios from "axios";
+
+import { useQuery } from "react-query";
+import { ToastContainer } from "react-toastify";
+import { ArticlesServices } from "../services/articles";
+import type { ArticleType, FiltersType } from "../types";
 import LoadingArticles from "./loadingArticles.component";
-import { useFilter } from "../utils/filterContext"; // Import the useFilter hook
-import { baseUrl } from "../utils/baseUrl";
 
 export default function Articles() {
-  const [articles, setMovies] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const { filterUrl } = useFilter(); // Use the filterUrl from context
+  const filters: FiltersType = {
+    category: "Technology",
+    source: "TechCrunch",
+    title: "apple",
+    date: "2025-01-11",
+  };
 
-  useEffect(() => {
-    axios
-      .get(`${baseUrl}${"Home"}`)
-      .then((response) => {
-        setMovies(response.data.results);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error on request articles Data", error);
-      });
-  }, [filterUrl]);
+  const { data, isLoading, isError } = useQuery<
+    {
+      results: ArticleType[];
+    },
+    Error
+  >("articles", async () => await ArticlesServices.fetchArticles(filters), {
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+  });
+
+  if (isError) {
+    return null;
+  }
 
   return (
     <>
-      <section className="container-articles">
-        {loading ? (
-          <LoadingArticles></LoadingArticles>
+      <section className="grid grid-cols-3 gap-[2rem]">
+        {isLoading || isError ? (
+          <LoadingArticles count={6} />
         ) : (
-          articles.map((article) => (
-            <Article key={article.article_id} article={article}></Article>
+          data?.results.map((article) => (
+            <Article key={article.id} article={article} />
           ))
         )}
+        <ToastContainer />
       </section>
     </>
   );

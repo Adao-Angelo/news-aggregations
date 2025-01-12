@@ -1,59 +1,44 @@
+import { ArrowDown } from "lucide-react";
 import { useState } from "react";
-import "../assets/styles/componentsStyles/userSigned.css";
-import { useSpring, animated } from "@react-spring/web";
-import { FaArrowDownLong } from "react-icons/fa6";
-import { changeLogin } from "./Header.component";
 
 export default function UserSigned() {
   const [isVisibleLogout, setIsVisibleLogout] = useState(false);
-
-  const props = useSpring({
-    from: { opacity: 0, display: "none" },
-    to: {
-      opacity: isVisibleLogout ? 1 : 0,
-      display: isVisibleLogout ? "block" : "none",
-    },
-    config: { duration: 300 },
-  });
 
   const toggleVisibility = () => {
     setIsVisibleLogout(!isVisibleLogout);
   };
 
   return (
-    <>
-      <section className="userSigned">
-        <aside className="info" onClick={toggleVisibility}>
-          <div>
-            <img src="/user-circle.svg" alt="" />
+    <div className="relative">
+      <div
+        className="flex items-center cursor-pointer gap-[1rem]"
+        onClick={toggleVisibility}
+      >
+        <div>
+          <img src="/profile.png" alt="" className="w-[4rem] h-[4rem]" />
+        </div>
+        <div className="p-[0.5rem]">
+          <p className="text-[1.6rem] font-bold">Adams john</p>
+          <p className="email text-[1rem] text-grayDark">
+            adaobegginer@gmail.com
+          </p>
+        </div>
+        <ArrowDown />
+      </div>
+      <div>
+        {isVisibleLogout && (
+          <div className="absolute  right-[0] top-[8rem] w-[20rem] bg-white rounded-[0.6rem] shadow-[0.2rem] ">
+            <div className="px-[2.3rem] py-[2.2rem]">
+              <a
+                href="#"
+                className="block text-white text-[1.2rem] bg-vibrantRed rounded-[0.6rem] p-[1.2rem] text-center"
+              >
+                Logout
+              </a>
+            </div>
           </div>
-          <div>
-            <p className="size-18 f-bold">Adams john</p>
-            <p className="email size-12 color-gray200">
-              adaobegginer@gmail.com
-            </p>
-          </div>
-          <FaArrowDownLong />
-        </aside>
-        <animated.div
-          style={props}
-          onClick={() => {
-            changeLogin();
-            alert("logout");
-          }}
-        >
-          {isVisibleLogout && (
-            <aside className="logout">
-              <p className="f-medium size-14">logout</p>
-            </aside>
-          )}
-          {!isVisibleLogout && (
-            <aside className="logout">
-              <p className="f-medium size-14">logout</p>
-            </aside>
-          )}
-        </animated.div>
-      </section>
-    </>
+        )}
+      </div>
+    </div>
   );
 }

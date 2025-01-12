@@ -1,27 +1,28 @@
-import "../assets/styles/componentsStyles/footer.css";
-import { HiMiniArrowLongRight } from "react-icons/hi2";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
     <>
-      <footer className="footer-component">
-        <p className="f-Mc size-24"> NewsLetter</p>
-        <div className="input-email-box">
+      <footer className="pt-[6.2rem] text-center border-t-[0.2rem] border-primaryBlack">
+        <p className="text-[2.4rem] font-popOne">NewsLetter</p>
+        <div className="mt-[3.5rem] mb-[3.2rem] border-[0.2rem] border-primaryBlack w-[36rem] m-auto  flex items-center py-[0.3rem] justify-between  px-[2.2rem]">
           <input
             type="text"
-            className="address-input-email color-black f-regular"
+            className="bg-transparent py-[1.6rem] text-primaryBlack w-full outline-none border-none text-[1.2rem]"
             placeholder="Email Address..."
           />
-          <HiMiniArrowLongRight />
+          <ArrowRight />
         </div>
 
-        <div className="address">
-          <p className="color-black f-medium">LinkedIn</p>
-          <p className="color-gray200 f-medium">Github</p>
-          <p className="color-gray200 f-medium">Instagram</p>
+        <div className="font-medium flex gap-[1.8rem] text-[1.4rem] justify-center">
+          <p className="">LinkedIn</p>
+          <p className="text-grayDark">Github</p>
+          <p className="text-grayDark">Instagram</p>
         </div>
 
-        <p className=" info size-14">© 2024 Adams John. All rights reserved</p>
+        <p className="text-[1.4rem] mt-[6.6rem]">
+          © 2024 Adams John. All rights reserved
+        </p>
       </footer>
     </>
   );
