@@ -21,6 +21,7 @@ export default function About() {
           </div>
           <div>
             <p className="text-[2rem] font-semibold mb-[1rem]">Our Mission</p>
+
             <p className="text-[1.6rem]">
               Our mission is to provide a platform for people to discover and
               engage with high-quality news and articles from a variety of
@@ -29,6 +30,7 @@ export default function About() {
           </div>
           <div>
             <p className="text-[2rem] font-semibold mb-[1rem]">History</p>
+
             <p className="text-[1.6rem]">
               News Aggregator was founded in 2020 with the goal of creating a
               platform that aggregates high-quality news and articles from
