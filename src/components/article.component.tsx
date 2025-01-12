@@ -18,7 +18,7 @@ export default function Article({ article }: ArticlesPros) {
         <img
           className="w-full h-[31.5rem]  bg-center  object-cover bg-pos border-[0.2rem] border-primaryBlack"
           src={article.image || defaultImageUrl}
-          alt="Article of: "
+          alt={`Article of: ${article.title}`}
         />
       </div>
       <p className="text-[2rem] font-medium">{article.title}</p>

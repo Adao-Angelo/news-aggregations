@@ -33,7 +33,7 @@ export default function About() {
             </p>
           </div>
 
-          <p className="f-Mc text-[1.8rem]">Thanks !!!</p>
+          <p className="font-popOne text-[1.8rem]">Thanks !!!</p>
         </section>
       </RootLayout>
     </>
