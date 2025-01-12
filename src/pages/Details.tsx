@@ -32,6 +32,7 @@ export default function Details() {
   return (
     <>
       <RootLayout>
+        {isLoading && <p>Loading...</p>}
         <section className="lg:px-[25.5rem] py-[8.2rem] md:px-[10rem] px-[4rem]">
           <p className="font-bold text-[3.2rem]">{data?.results[0].title}</p>
           <div className="flex justify-between items-center mt-[1.8rem] mb-[4.2rem]">

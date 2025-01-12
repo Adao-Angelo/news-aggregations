@@ -15,6 +15,15 @@ export default {
         sans: ["Montserrat", "sans-serif"],
         popOne: ["PopOne", "cursive"],
       },
+      keyframes: {
+        pulseUp: {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.05)", opacity: "0.9" },
+        },
+      },
+      animation: {
+        pulseUp: "pulseUp 1.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
