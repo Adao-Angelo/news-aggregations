@@ -1,61 +1,68 @@
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import { ArticlesServices } from "../services/articles";
+import type { ArticleType } from "../types";
+import formatArticleBody from "../utils/ArticleFormatter";
+import { formatDate } from "../utils/formatDate";
 import RootLayout from "./Layout";
 
 export default function Details() {
+  const { id } = useParams<{ id: string }>();
+
+  const { data, isLoading, error } = useQuery<{
+    has_next_pages: boolean;
+    results: ArticleType[];
+  }>(
+    ["article", id],
+    async () => {
+      const response = await ArticlesServices.fetchArticleById(id as string);
+
+      return response;
+    },
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+    }
+  );
+
+  if (error) {
+    return null;
+  }
   return (
     <>
       <RootLayout>
         <section className="lg:px-[25.5rem] py-[8.2rem] md:px-[10rem] px-[4rem]">
-          <p className="font-bold text-[3.2rem]">
-            Top 10 Bali Travel Destinations for 2023
-          </p>
+          <p className="font-bold text-[3.2rem]">{data?.results[0].title}</p>
           <div className="flex justify-between items-center mt-[1.8rem] mb-[4.2rem]">
             <p className="font-semibold text-[1.6rem] ">
-              By Jorge,
+              By {data?.results[0].author.name},
               <span className="font-normal">
                 <span> </span>
-                Category: <span className="text-grayDark">Innovation</span>
+                Category:{" "}
+                <span className="text-grayDark">
+                  {data?.results[0]?.categories[1]?.name}
+                </span>
               </span>
             </p>
-            <p className="text-[1.3rem]">12/05/2022 13:40</p>
+            <p className="text-[1.3rem]">
+              {formatDate(data?.results[0]?.published_at as string)}
+            </p>
           </div>
 
           <div className="border-b border-primaryBlack">
             <img
-              src="/details.png"
+              src={data?.results[0].image}
               alt="Image of: "
-              className="w-full h-[48.7rem] bg-cover"
+              className="w-full h-[48.7rem] bg-cover object-cover bg-pos border-[0.2rem] border-primaryBlack"
             />
 
             <p className="pt-[3.2rem] pb-[3.4rem] text-[1.6rem]">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+              {data?.results[0].description}
             </p>
           </div>
-          <div className="my-[4.2rem] text-[1.6rem] grid gap-[2.2rem]">
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using 'Content here,
-              content here', making it looking like readable English. Many
-              desktop publishing packages and web page editors now use Lorem
-              Ipsum as their default model text, and a search for 'lorem ipsum'
-              will uncover many web sites still in their infancy. Various
-              versions have evolved over the years, sometimes by accident,
-              sometimes on purpose injected humour and the like.
-            </p>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using 'Content here,
-              content here', making it looking like readable English. Many
-              desktop publishing packages and web page editors now use Lorem
-              Ipsum as their default model text, and a search for 'lorem ipsum'
-              will uncover many web sites still in their infancy. Various
-              versions have evolved over the years, sometimes by accident,
-              sometimes on purpose injected humour and the like.
-            </p>
+          <div className="my-[4.2rem] leading-loose text-[1.6rem] grid gap-[2.2rem]">
+            {formatArticleBody(data?.results[0].body || "")}
           </div>
 
           <p className="font-popOne text-[2.4rem]">Thanks for read !!</p>

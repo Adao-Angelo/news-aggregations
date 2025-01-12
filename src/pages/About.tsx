@@ -6,7 +6,7 @@ export default function About() {
       <RootLayout>
         <section
           id="about"
-          className=":lg:px-[25.5rem] py-[8.2rem] grid gap-[3rem]  md:px-[10rem] px-[4rem] "
+          className="lg:px-[25.5rem] py-[8.2rem] grid gap-[3rem]  md:px-[10rem] px-[4rem] "
         >
           <p className="font-bold text-[3.2rem]">About News Aggregator</p>
 

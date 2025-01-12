@@ -26,13 +26,15 @@ export default function Article({ article }: ArticlesPros) {
           <ArrowUpRight className="w-[2.4rem] h-[2.4rem]"></ArrowUpRight>
         </Link>
         <img
-          className="w-full h-[31.5rem]  bg-center  object-cover bg-pos border-[0.2rem] border-primaryBlack"
+          className="w-full h-[31.5rem]  bg-center  object-cover border-[0.2rem] border-primaryBlack"
           src={article.image || defaultImageUrl}
           alt={`Article of: ${article.title}`}
         />
       </div>
       <div className="h-[26rem]">
-        <p className="text-[2rem]  font-medium">{article.title}</p>
+        <Link to={`/details/${article.id}`}>
+          <p className="text-[2rem]  font-medium">{article.title}</p>
+        </Link>
         <div>
           <p className="text-[1.4rem] pt-[1.8rem] pb-[3.8rem]">
             {shortenText(article.description)}
