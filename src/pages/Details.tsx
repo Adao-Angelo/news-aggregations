@@ -4,7 +4,7 @@ export default function Details() {
   return (
     <>
       <RootLayout>
-        <section className="px-[25.5rem] py-[8.2rem]">
+        <section className="lg:px-[25.5rem] py-[8.2rem] md:px-[10rem] px-[4rem]">
           <p className="font-bold text-[3.2rem]">
             Top 10 Bali Travel Destinations for 2023
           </p>
@@ -23,7 +23,7 @@ export default function Details() {
             <img
               src="/details.png"
               alt="Image of: "
-              className="w-full h-[48.7rem]"
+              className="w-full h-[48.7rem] bg-cover"
             />
 
             <p className="pt-[3.2rem] pb-[3.4rem] text-[1.6rem]">
@@ -58,7 +58,7 @@ export default function Details() {
             </p>
           </div>
 
-          <p className="text-[2.4rem]">Thanks for read !!</p>
+          <p className="font-popOne text-[2.4rem]">Thanks for read !!</p>
         </section>
       </RootLayout>
     </>

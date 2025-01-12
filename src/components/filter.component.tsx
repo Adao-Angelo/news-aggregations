@@ -1,4 +1,4 @@
-import { FilterIcon } from "lucide-react";
+import { FilterIcon, Settings } from "lucide-react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -44,34 +44,41 @@ export default function Filter() {
         }`}
       >
         <div>
-          <h1 className="font-popOne text-[4rem]">
+          <h1 className="font-popOne text-[2.5rem] lg:text-[4rem]">
             Articles
-            <span className="text-[1.6rem] text-grayDark">100 results</span>
+            <span className="text-[1.2rem] sm:text-[1.4rem]  font-medium font-sans text-grayDark">
+              _ 50 results _
+            </span>
           </h1>
         </div>
 
-        <button
-          onClick={changeFilterVisibility}
-          className={`p-[1.6rem] text-[1.4rem] flex gap-[0.8rem] rounded-[0.6rem] border-[0.2rem] ${
-            searchParams.get("filterIsOpen") === "true"
-              ? "border-primaryBlack text-primaryBlack font-semibold"
-              : "border-stroke text-grayDark"
-          }`}
-        >
-          <FilterIcon
-            className={`w-[1.6rem] ${
+        <div className="flex items-center gap-[0.8rem]">
+          <button
+            onClick={changeFilterVisibility}
+            className={`p-[1rem] md:p-[1.6rem] text-[1rem] lg:text-[1.4rem] flex gap-[0.8rem] rounded-[0.3rem] md:rounded-[0.6rem] border-[0.2rem] ${
               searchParams.get("filterIsOpen") === "true"
-                ? "text-primaryBlack"
-                : "text-grayDark"
+                ? "border-primaryBlack text-primaryBlack font-semibold"
+                : "border-stroke text-grayDark"
             }`}
-          />
-          Show filters
-        </button>
+          >
+            <FilterIcon
+              className={`w-[1.4rem] h-[1.4rem]  ${
+                searchParams.get("filterIsOpen") === "true"
+                  ? "text-primaryBlack"
+                  : "text-grayDark"
+              }`}
+            />
+            Show filters
+          </button>
+          <div className="p-[1rem] md:p-[1.6rem] rounded-[0.4rem] md:rounded-[0.6rem] text-white bg-primaryBlack ">
+            <Settings className="w-[2rem] h-[2rem]"></Settings>
+          </div>
+        </div>
       </div>
 
       {searchParams.get("filterIsOpen") === "true" && (
-        <div className="flex justify-between items-center mb-[12.1rem]">
-          <div className="w-[40%]">
+        <div className="flex flex-col gap-[1rem] md:flex-row justify-between items-center mb-[12.1rem]">
+          <div className="md:w-[40%] w-full">
             <input
               className="text-[1.2rem] w-full text-primaryBlack font-normal py-[1.8rem] px-[2.2rem] outline-none border-[0.2rem] border-primaryBlack"
               placeholder="Search for articles here..."
@@ -81,7 +88,7 @@ export default function Filter() {
             />
           </div>
 
-          <div className="w-[15%]">
+          <div className="md:w-[15%] w-full">
             <select
               className="w-full text-primaryBlack bg-white font-medium text-[1.2rem] py-[1.8rem] px-[2.2rem] outline-none border-[0.2rem] border-primaryBlack"
               value={searchParams.get("source") || ""}
@@ -97,7 +104,7 @@ export default function Filter() {
             </select>
           </div>
 
-          <div className="w-[15%]">
+          <div className="md:w-[15%] w-full">
             <select
               className="w-full text-primaryBlack bg-white font-medium text-[1.2rem] py-[1.8rem] px-[2.2rem] outline-none border-[0.2rem] border-primaryBlack"
               value={searchParams.get("category") || ""}
@@ -111,7 +118,7 @@ export default function Filter() {
             </select>
           </div>
 
-          <div className="w-[25%]">
+          <div className="md:w-[25%] w-full">
             <input
               type="date"
               className="w-full text-primaryBlack bg-white font-medium text-[1.2rem] py-[1.8rem] px-[2.2rem] outline-none border-[0.2rem] border-primaryBlack"
