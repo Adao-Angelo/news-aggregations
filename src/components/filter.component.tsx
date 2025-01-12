@@ -40,13 +40,20 @@ export default function Filter() {
 
         <button
           onClick={changeFilterVisibility}
-          className={`p-[1.6rem] text-[1.4rem] rounded-[0.6rem] border-[0.2rem] ${
+          className={`p-[1.6rem] text-[1.4rem] flex gap-[0.8rem]  rounded-[0.6rem] border-[0.2rem] ${
             searchParams.get("filterIsOpen") === "true"
-              ? " border-primaryBlack text-primaryBlack"
+              ? " border-primaryBlack text-primaryBlack font-semibold"
               : "border-stroke text-grayDark"
           }`}
         >
-          <FilterIcon></FilterIcon> Show filters
+          <FilterIcon
+            className={`w-[1.6rem] ${
+              searchParams.get("filterIsOpen") === "true"
+                ? " text-primaryBlack"
+                : " text-grayDark"
+            }`}
+          ></FilterIcon>{" "}
+          Show filters
         </button>
       </div>
       {searchParams.get("filterIsOpen") === "true" ? (

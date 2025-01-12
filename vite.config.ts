@@ -7,4 +7,14 @@ export default defineConfig({
   css: {
     postcss: "./postcss.config.ts",
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://api.apitube.io",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });
