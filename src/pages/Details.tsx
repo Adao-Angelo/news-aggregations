@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import LoadingDetails from "../components/LoadingDetails";
+import PulseUp from "../components/PulseUp";
 import { ArticlesServices } from "../services/articles";
 import type { ArticleType } from "../types";
 import formatArticleBody from "../utils/ArticleFormatter";
@@ -26,15 +28,25 @@ export default function Details() {
     }
   );
 
+  if (isLoading) {
+    return (
+      <RootLayout>
+        <section className="lg:px-[25.5rem] py-[8.2rem] md:px-[10rem] px-[4rem]">
+          <LoadingDetails />
+        </section>
+      </RootLayout>
+    );
+  }
+
   if (error) {
-    return null;
+    return <div></div>;
   }
   return (
     <>
       <RootLayout>
-        {isLoading && <p>Loading...</p>}
         <section className="lg:px-[25.5rem] py-[8.2rem] md:px-[10rem] px-[4rem]">
           <p className="font-bold text-[3.2rem]">{data?.results[0].title}</p>
+
           <div className="flex justify-between items-center mt-[1.8rem] mb-[4.2rem]">
             <p className="font-semibold text-[1.6rem] ">
               By {data?.results[0].author.name},
@@ -65,8 +77,9 @@ export default function Details() {
           <div className="my-[4.2rem] leading-loose text-[1.6rem] grid gap-[2.2rem]">
             {formatArticleBody(data?.results[0].body || "")}
           </div>
-
-          <p className="font-popOne text-[2.4rem]">Thanks for read !!</p>
+          <PulseUp>
+            <p className="font-popOne text-[2.4rem]">Thanks for read !!</p>
+          </PulseUp>
         </section>
       </RootLayout>
     </>
