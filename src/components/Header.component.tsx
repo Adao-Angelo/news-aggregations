@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <div>
       <header
-        className={`top-0 fixed w-screen lg:px-[16rem]  md:px-[10rem]  px-[4rem] bg-grayLight border-b border-primaryBlack py-[1.6rem] text-[1.4rem] flex justify-between items-center ${
+        className={`top-0 fixed w-screen lg:px-[16rem]   md:px-[10rem]  px-[4rem] bg-grayLight/80  backdrop-blur-[1rem] border-b border-primaryBlack py-[1.6rem] text-[1.4rem] flex justify-between items-center ${
           signInModalIsOpen || signUpModalIsOpen ? "z-0" : "z-10"
         }`}
       >
@@ -60,7 +60,7 @@ export default function Header() {
         {isLogged ? (
           <UserSigned></UserSigned>
         ) : (
-          <section className="flex items-center font-medium gap-[0.8rem]">
+          <section className="flex items-center  font-medium gap-[0.8rem]">
             <button onClick={openSignInModal}>
               <div className="md:px-[1.6rem] px-[1rem] md:py-[1.2rem] py-[0.8rem] rounded-[0.6rem] md:text-[1.4rem]  text-[1.2rem] ">
                 Sign In
