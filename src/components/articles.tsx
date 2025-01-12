@@ -1,17 +1,19 @@
-import Article from "./article.component";
-
 import { useQuery } from "react-query";
+import { useSearchParams } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { ArticlesServices } from "../services/articles";
-import type { ArticleType, FiltersType } from "../types";
+import type { ArticleType } from "../types";
+import Article from "./article.component";
 import LoadingArticles from "./loadingArticles.component";
 
 export default function Articles() {
-  const filters: FiltersType = {
-    category: "Technology",
-    source: "TechCrunch",
-    title: "apple",
-    date: "2025-01-11",
+  const [searchParams] = useSearchParams();
+
+  const filters = {
+    category: searchParams.get("category") || "",
+    source: searchParams.get("source") || "",
+    title: searchParams.get("search") || "",
+    date: searchParams.get("date") || "",
   };
 
   const { data, isLoading, isError } = useQuery<
@@ -19,11 +21,15 @@ export default function Articles() {
       results: ArticleType[];
     },
     Error
-  >("articles", async () => await ArticlesServices.fetchArticles(filters), {
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-    refetchOnReconnect: false,
-  });
+  >(
+    ["articles", filters],
+    async () => await ArticlesServices.fetchArticles(filters),
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+    }
+  );
 
   if (isError) {
     return null;
