@@ -4,7 +4,10 @@ export default function About() {
   return (
     <>
       <RootLayout>
-        <section className="px-[25.5rem] py-[8.2rem] grid gap-[3rem]">
+        <section
+          id="about"
+          className="lg:px-[25.5rem] py-[8.2rem] grid gap-[3rem]  md:px-[10rem] px-[4rem] "
+        >
           <p className="font-bold text-[3.2rem]">About News Aggregator</p>
 
           <div>
@@ -33,7 +36,7 @@ export default function About() {
             </p>
           </div>
 
-          <p className="f-Mc text-[1.8rem]">Thanks !!!</p>
+          <p className="font-popOne text-[1.8rem]">Thanks !!!</p>
         </section>
       </RootLayout>
     </>

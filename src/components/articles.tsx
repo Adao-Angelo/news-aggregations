@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { useSearchParams } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -30,6 +31,7 @@ export default function Articles() {
 
   const { data, isLoading, isError } = useQuery<
     {
+      has_next_pages: boolean;
       results: ArticleType[];
     },
     Error
@@ -53,9 +55,13 @@ export default function Articles() {
     return null;
   }
 
+  useEffect(() => {
+    updateUrlState("hasNextPage", String(data?.has_next_pages));
+  }, [location.pathname]);
+
   return (
     <>
-      <section className="grid grid-cols-3 gap-[2rem]">
+      <section className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-[2rem] ">
         {isLoading || isError ? (
           <LoadingArticles count={6} />
         ) : (

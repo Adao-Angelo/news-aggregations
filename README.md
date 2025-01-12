@@ -1,35 +1,89 @@
+# 📰 News Aggregator
 
-# News Aggregations
-
-**News Aggregations** é um blog de notícias que reúne informações de diversas fontes, oferecendo conteúdo atualizado e relevante sobre variados temas. O objetivo é proporcionar aos usuários uma experiência prática e informativa, centralizando notícias em um único lugar.
-
----
-
-## 📋 **Funcionalidades**
-
-- **Agregação de Notícias**: Integração com várias fontes confiáveis para exibir notícias atualizadas.
-- **Categorias de Conteúdo**: Organize as notícias por temas como Política, Tecnologia, Esportes, Entretenimento, e muito mais.
-- **Busca por Palavras-chave**: Encontre artigos específicos de forma rápida e eficiente.
-- **Postagens em Destaque**: Exibição de notícias principais em destaque na página inicial. stado:off
----
-
-## 🚀 **Tecnologias Utilizadas**
-
-- **Frontend**: Desenvolvido com [React.js](https://react.dev/);
-- **APIs de Notícias**: Integração com fontes como [NewsAPI](https://newsapi.org/) para buscar conteúdo dinâmico.
----
-
-
-## 📄 **Licença**
-
-Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
+Welcome to **News Aggregator**, your number one source for the latest news articles from around the world. We're dedicated to providing you the best of news, with a focus on reliability, accessibility, and comprehensiveness.
 
 ---
 
-## 📞 **Contato**
+<img src="./assets/Cover.png" alt="News Aggregator Cover" />
 
-- **E-mail**: adaobegginer@gmail.com
-- **LinkedIn**: [Adão Ângelo João](https://www.linkedin.com/in/ad%C3%A3o-%C3%A2ngelo-jo%C3%A3o-238233335/)
-- **GitHub**: [Adao-Angelo](https://github.com/Adao-Angel)
+## 🚀 Features
 
-Agradecemos por usar **News Aggregations**! 🎉
+### Completed Features
+- **List Articles**: Fetch and display articles from an API using `react-query`.
+- **Filter Articles**: Enable users to filter articles dynamically using `URL state` with `react-router-dom`.
+- **Configurable Filters**: Customize filters for enhanced user experience.
+- **User-Friendly Interface**: Modern and intuitive design for seamless navigation.
+- **Article Details**: View detailed information about each article.
+- **Responsive Design**: Optimized layout for desktops, tablets, and mobile devices.
+
+### Upcoming Features
+- **Newsletter Subscription**: Allow users to subscribe to a newsletter for updates.
+- **GitHub Authentication**: Log in using GitHub for a personalized experience.
+- **Authentication**: Implement user authentication for added functionality.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology         | Description                                          | Icon                                                                                      |
+|---------------------|------------------------------------------------------|------------------------------------------------------------------------------------------|
+| **React.js**       | JavaScript library for building user interfaces.     | ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)               |
+| **TypeScript**     | Typed superset of JavaScript for scalable development. | ![TypeScript](https://img.shields.io/badge/-Typescript-05122A?style=flat&logo=typescript)|
+| **React Query**    | Data fetching and caching library for React apps.     | ![React Query](https://img.shields.io/badge/-ReactQuery-05122A?style=flat&logo=react-query)|
+| **React Router**   | Declarative routing for React applications.           | ![React Router](https://img.shields.io/badge/-ReactRouter-05122A?style=flat&logo=react-router)|
+| **Firebase**       | Backend platform for authentication and storage.      | ![Firebase](https://img.shields.io/badge/-Firebase-05122A?style=flat&logo=firebase)       |
+
+---
+
+## 📖 Getting Started
+
+Follow these steps to get the project up and running on your local machine:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Adao-Angelo/news-aggregations.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd news-aggregations
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+5. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+---
+## 📧 .env 
+
+```.env 
+   VITE_API_TUBE_KEY = ""
+   VITE_API_BASE_URL = ""
+```
+
+
+## 📧 Contact
+
+For questions or feedback, feel free to reach out:
+
+- **Email**: adaobbegginer@gmail.com
+- **GitHub**: [Adão Ângelo Joâo](https://github.com/Adao-Angelo)
+-
+---
+
+Thank you for using **News Aggregator**! Stay informed and enjoy your reading experience.
+
+
+
+

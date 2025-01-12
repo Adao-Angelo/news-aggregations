@@ -17,4 +17,14 @@ export namespace ArticlesServices {
       throw new Error("Error on  fetching articles: " + error);
     }
   }
+
+  export async function fetchArticleById(id: string) {
+    try {
+      const response = await api.get(`/article/?id=${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      throw new Error("Error fetching article by ID: " + error);
+    }
+  }
 }
