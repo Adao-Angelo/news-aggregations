@@ -8,7 +8,7 @@ export namespace ArticlesServices {
     date?: string;
   }) {
     try {
-      const response = await api.get("/everything", {
+      const response = await api.get("/everything?limit=9", {
         params: filters,
       });
       console.log(response.data);
