@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import LoadingDetails from "../components/LoadingDetails";
 import PulseUp from "../components/PulseUp";
 import { ArticlesServices } from "../services/articles";
@@ -39,7 +40,9 @@ export default function Details() {
   }
 
   if (error) {
-    return <div></div>;
+    if (error) {
+      toast.error("Error on list articles...");
+    }
   }
   return (
     <>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { useSearchParams } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { ArticlesServices } from "../services/articles";
 import type { ArticleType } from "../types";
 import Article from "./article.component";
@@ -29,7 +29,7 @@ export default function Articles() {
     page: searchParams.get("page") || "1",
   };
 
-  const { data, isLoading, isError } = useQuery<
+  const { data, isLoading, error } = useQuery<
     {
       has_next_pages: boolean;
       results: ArticleType[];
@@ -51,8 +51,8 @@ export default function Articles() {
     }
   );
 
-  if (isError) {
-    return null;
+  if (error) {
+    toast.error("Error on list articles...");
   }
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Articles() {
   return (
     <>
       <section className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-[2rem] ">
-        {isLoading || isError ? (
+        {isLoading || error ? (
           <LoadingArticles count={6} />
         ) : (
           data?.results.map((article) => (
