@@ -29,9 +29,11 @@ export default function Articles() {
     page: searchParams.get("page") || "1",
   };
 
+  const articlesPerPage = 6;
+
   const { data, isLoading, error } = useQuery<
     {
-      has_next_pages: boolean;
+      status: string;
       news: ArticleType[];
     },
     Error
@@ -40,7 +42,12 @@ export default function Articles() {
     async () => {
       const response = await ArticlesServices.fetchArticles(filters);
 
-      updateUrlState("hasNextPage", String(response.has_next_pages));
+      const totalPages = Math.ceil(response.news.length / articlesPerPage);
+      updateUrlState(
+        "hasNextPage",
+        String(parseInt(filters.page, 10) < totalPages)
+      );
+      updateUrlState("totalResults", String(response.news.length));
 
       return response;
     },
@@ -56,16 +63,21 @@ export default function Articles() {
   }
 
   useEffect(() => {
-    updateUrlState("hasNextPage", String(data?.has_next_pages));
+    updateUrlState("hasNextPage", String(data?.status));
   }, [location.pathname]);
+
+  const currentPage = parseInt(filters.page, 10);
+  const startIndex = (currentPage - 1) * articlesPerPage;
+  const endIndex = startIndex + articlesPerPage;
+  const articlesToShow = data?.news.slice(startIndex, endIndex) || [];
 
   return (
     <>
-      <section className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-[2rem] ">
+      <section className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-[2rem]">
         {isLoading || error ? (
-          <LoadingArticles count={6} />
+          <LoadingArticles count={articlesPerPage} />
         ) : (
-          data?.news.map((article) => (
+          articlesToShow.map((article) => (
             <Article key={article.id} article={article} />
           ))
         )}
