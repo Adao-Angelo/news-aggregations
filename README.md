@@ -67,11 +67,7 @@ Follow these steps to get the project up and running on your local machine:
 ---
 ## 📧 .env 
 
-```.env 
-   VITE_API_TUBE_KEY = ""
-   VITE_API_BASE_URL = ""
-```
-
+[env docs](./docs/env.md)
 
 ## 📧 Contact
 
