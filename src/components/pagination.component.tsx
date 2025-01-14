@@ -5,10 +5,13 @@ export default function Pagination() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
-  const hasNextPage = searchParams.get("hasNextPage") === "true";
+  const totalResults = parseInt(searchParams.get("totalResults") || "0", 10);
+  const articlesPerPage = 6;
+  const totalPages = Math.ceil(totalResults / articlesPerPage);
 
   const handlePageClick = (page: number) => {
-    if (page >= 1) {
+    window.scrollTo(0, 0);
+    if (page >= 1 && page <= totalPages) {
       const newParams = new URLSearchParams(searchParams);
       newParams.set("page", String(page));
       setSearchParams(newParams);
@@ -41,9 +44,9 @@ export default function Pagination() {
         <li>
           <button
             onClick={() => handlePageClick(currentPage + 1)}
-            disabled={!hasNextPage}
+            disabled={currentPage >= totalPages}
             className={`p-2 rounded ${
-              !hasNextPage
+              currentPage >= totalPages
                 ? "text-gray-400 cursor-not-allowed"
                 : "hover:bg-gray-100"
             }`}

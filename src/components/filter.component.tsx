@@ -47,8 +47,8 @@ export default function Filter() {
           <h1 className="font-popOne text-[2.5rem] lg:text-[4rem]">
             Articles
             <span className="text-[1.2rem] sm:text-[1.4rem]  font-medium font-sans text-grayDark">
-              <span> 50</span>
-              <span className="hidden phone:inline">results</span>
+              <span> {searchParams.get("totalResults")} </span>
+              <span className="text-[1rem] phone:text-[1.4rem]">results</span>
             </span>
           </h1>
         </div>
