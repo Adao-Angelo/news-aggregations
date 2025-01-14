@@ -8,7 +8,7 @@ interface AuthContextType {
   logout: () => void;
 }
 
-const apiUrl = "https://github-auth-server-ctzu.onrender.com";
+const apiUrl = import.meta.env.VITE_API_GIT_AUTH;
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 
