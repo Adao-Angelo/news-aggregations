@@ -187,9 +187,7 @@ export default function Header() {
             <button className="p-[1.8rem] font-medium mt-[2.2rem] w-full text-[1.2rem] rounded-[0.6rem] text-white bg-primaryBlack ">
               Sign UP
             </button>
-            <p className="text-[1.3rem] mt-[1.6rem] text-center font-popOne text-grayDark">
-              Or
-            </p>
+
             {/* <button className="relative p-[1rem] text-center font-medium mt-[2.2rem] w-full text-[1.2rem] rounded-[0.6rem] border-[0.2rem] border-primaryBlack overflow-hidden group">
               <span className="absolute inset-0 bg-primaryBlack transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
               <span className="relative text-primaryBlack group-hover:text-white z-10 flex items-center justify-center">
