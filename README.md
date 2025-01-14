@@ -4,7 +4,7 @@ Welcome to **News Aggregator**, your number one source for the latest news artic
 
 ---
 
-<img src="./assets/Cover.png" alt="News Aggregator Cover" />
+<img src="./assets/news.png" alt="News Aggregator Cover" />
 
 ## 🚀 Features
 
