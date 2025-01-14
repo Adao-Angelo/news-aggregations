@@ -41,17 +41,27 @@ export default function Header() {
         <menu className="flex items-center gap-[1.6rem] md:gap-[3.6rem]">
           <section>
             <Link to="/">
-              <img src="/logo.png" alt="Logo" className="w-[8rem] md:w-auto" />
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-[6rem] phone:w-[8rem] md:w-auto"
+              />
             </Link>
           </section>
           <ul className="flex items-center gap-[1rem] md:gap-[1.8rem]">
             <li>
-              <Link to="/" className="font-medium">
+              <Link
+                to="/"
+                className="font-medium text-[1.2rem] phone:text-[1.4rem]"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about/#about" className="text-grayDark font-medium">
+              <Link
+                to="/about/#about"
+                className="text-grayDark font-medium text-[1.2rem] phone:text-[1.4rem]"
+              >
                 About us
               </Link>
             </li>

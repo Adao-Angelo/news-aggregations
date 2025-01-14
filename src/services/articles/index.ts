@@ -13,6 +13,8 @@ export namespace ArticlesServices {
         params: filters,
       });
 
+      console.log(response.data);
+
       return response.data;
     } catch (error) {
       throw new Error("Error on  fetching articles: " + error);
