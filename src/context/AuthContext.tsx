@@ -8,7 +8,7 @@ interface AuthContextType {
   logout: () => void;
 }
 
-const apiUrl = "http://localhost:5555";
+const apiUrl = "https://github-auth-server-ctzu.onrender.com";
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 
