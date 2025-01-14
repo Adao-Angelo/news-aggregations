@@ -24,15 +24,15 @@ export default function Articles() {
   const filters = {
     category: searchParams.get("category") || "",
     source: searchParams.get("source") || "",
-    title: searchParams.get("search") || "",
-    date: searchParams.get("date") || "",
+    keywords: searchParams.get("keywords") || "",
+    start_date: searchParams.get("start_date") || "",
     page: searchParams.get("page") || "1",
   };
 
   const { data, isLoading, error } = useQuery<
     {
       has_next_pages: boolean;
-      results: ArticleType[];
+      news: ArticleType[];
     },
     Error
   >(
@@ -65,7 +65,7 @@ export default function Articles() {
         {isLoading || error ? (
           <LoadingArticles count={6} />
         ) : (
-          data?.results.map((article) => (
+          data?.news.map((article) => (
             <Article key={article.id} article={article} />
           ))
         )}
