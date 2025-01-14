@@ -30,7 +30,7 @@ export default function Filter() {
 
   const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      updateFilter("search", searchValue);
+      updateFilter("keywords", searchValue);
     }
   };
 
@@ -123,7 +123,7 @@ export default function Filter() {
               type="date"
               className="w-full text-primaryBlack bg-white font-medium text-[1.2rem] py-[1.8rem] px-[2.2rem] outline-none border-[0.2rem] border-primaryBlack"
               value={searchParams.get("date") || ""}
-              onChange={(e) => updateFilter("date", e.target.value)}
+              onChange={(e) => updateFilter("start_date", e.target.value)}
             />
           </div>
         </div>
