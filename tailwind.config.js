@@ -24,6 +24,16 @@ export default {
       animation: {
         pulseUp: "pulseUp 1.5s ease-in-out infinite",
       },
+      screens: {
+        phone: "450px",
+
+        tablet: "640px",
+
+        laptop: "1024px",
+
+        desktop: "1280px",
+        // => @media (min-width: 1280px) { ... }
+      },
     },
   },
   plugins: [],

@@ -47,7 +47,8 @@ export default function Filter() {
           <h1 className="font-popOne text-[2.5rem] lg:text-[4rem]">
             Articles
             <span className="text-[1.2rem] sm:text-[1.4rem]  font-medium font-sans text-grayDark">
-              _ 50 results _
+              <span> 50</span>
+              <span className="hidden phone:inline">results</span>
             </span>
           </h1>
         </div>
@@ -55,7 +56,7 @@ export default function Filter() {
         <div className="flex items-center gap-[0.8rem]">
           <button
             onClick={changeFilterVisibility}
-            className={`p-[1rem] md:p-[1.6rem] text-[1rem] lg:text-[1.4rem] flex gap-[0.8rem] rounded-[0.3rem] md:rounded-[0.6rem] border-[0.2rem] ${
+            className={`px-[0.7rem] py-[1rem]  phone:p-[1rem] md:p-[1.6rem] text-[1rem] lg:text-[1.4rem] flex gap-[0.8rem] rounded-[0.3rem] md:rounded-[0.6rem] border-[0.2rem] ${
               searchParams.get("filterIsOpen") === "true"
                 ? "border-primaryBlack text-primaryBlack font-semibold"
                 : "border-stroke text-grayDark"
