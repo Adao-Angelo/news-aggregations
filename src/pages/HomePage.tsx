@@ -1,4 +1,4 @@
-import Articles from "../components/articles";
+import Articles from "../components/Articles/ArticleList";
 import Filter from "../components/filter.component";
 import Pagination from "../components/pagination.component";
 import RootLayout from "./Layout";

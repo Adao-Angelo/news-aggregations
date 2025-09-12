@@ -1,4 +1,4 @@
-import Articles from "./articles";
+import Articles from "./Articles/ArticleList";
 
 export default function Main() {
   return (

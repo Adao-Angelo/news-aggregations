@@ -5,7 +5,7 @@ import { AuthProvider } from "./context/AuthContext";
 import NotFoundPage from "./pages/404";
 import About from "./pages/About";
 import ArticleDetailsPage from "./pages/ArticleDetailsPage";
-import Home from "./pages/Home";
+import Home from "./pages/HomePage";
 
 const queryClient = new QueryClient();
 
