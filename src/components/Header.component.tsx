@@ -1,8 +1,7 @@
 import { Github, X } from "lucide-react";
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import UserSigned from "./userSigned";
 
 export default function Header() {
@@ -24,12 +23,6 @@ export default function Header() {
   function closeSignUpModal() {
     setSignUpModalIsOpen(false);
   }
-
-  const auth = useContext(AuthContext);
-
-  useEffect(() => {
-    window.scrollTo(2, 0);
-  }, []);
 
   return (
     <div>
@@ -68,11 +61,11 @@ export default function Header() {
           </ul>
         </menu>
 
-        {auth?.user ? (
+        {true ? (
           <UserSigned
-            name={auth.user.displayName}
-            email={auth.user._json.email || "@"}
-            image={auth.user?._json.avatar_url}
+            name={"Edgar Paulo"}
+            email={"edgarpaulo@gmail.com"}
+            image={"https://github.com/Adao-Angelo.png"}
           ></UserSigned>
         ) : (
           <section className="flex items-center  font-medium gap-[0.8rem]">
@@ -135,10 +128,7 @@ export default function Header() {
             <p className="text-[1.3rem] mt-[1.6rem] text-center font-popOne text-grayDark">
               Or
             </p>
-            <button
-              onClick={auth?.login}
-              className="relative p-[1rem] text-center font-medium mt-[2.2rem] w-full text-[1.2rem] rounded-[0.6rem] border-[0.2rem] border-primaryBlack overflow-hidden group"
-            >
+            <button className="relative p-[1rem] text-center font-medium mt-[2.2rem] w-full text-[1.2rem] rounded-[0.6rem] border-[0.2rem] border-primaryBlack overflow-hidden group">
               <span className="absolute inset-0 bg-primaryBlack transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
               <span className="relative text-primaryBlack group-hover:text-white z-10 flex items-center justify-center">
                 <Github className="m-auto text-center"></Github>
@@ -197,13 +187,6 @@ export default function Header() {
             <button className="p-[1.8rem] font-medium mt-[2.2rem] w-full text-[1.2rem] rounded-[0.6rem] text-white bg-primaryBlack ">
               Sign UP
             </button>
-
-            {/* <button className="relative p-[1rem] text-center font-medium mt-[2.2rem] w-full text-[1.2rem] rounded-[0.6rem] border-[0.2rem] border-primaryBlack overflow-hidden group">
-              <span className="absolute inset-0 bg-primaryBlack transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
-              <span className="relative text-primaryBlack group-hover:text-white z-10 flex items-center justify-center">
-                <Github className="m-auto text-center"></Github>
-              </span>
-            </button> */}
           </div>
         </div>
       </Modal>
