@@ -3,9 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AuthProvider } from "./context/AuthContext";
 import NotFoundPage from "./pages/404";
-import About from "./pages/About";
+import AboutPage from "./pages/AboutPage";
 import ArticleDetailsPage from "./pages/ArticleDetailsPage";
-import Home from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
 
 const queryClient = new QueryClient();
 
@@ -17,11 +17,11 @@ export default function App() {
           router={createBrowserRouter([
             {
               path: "/",
-              element: <Home></Home>,
+              element: <HomePage></HomePage>,
             },
             {
               path: "/about",
-              element: <About></About>,
+              element: <AboutPage></AboutPage>,
             },
             {
               path: "/details/:id",

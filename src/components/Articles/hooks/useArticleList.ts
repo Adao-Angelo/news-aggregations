@@ -50,14 +50,13 @@ export default function useArticleList() {
     },
     {
       refetchOnMount: false,
-      refetchOnWindowFocus: true,
-      refetchOnReconnect: true,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      onError: () => {
+        toast.error("Error on loading articles...");
+      },
     }
   );
-
-  if (!error) {
-    toast.error("Error on loading articles...");
-  }
 
   useEffect(() => {
     updateUrlState("hasNextPage", String(data?.status));

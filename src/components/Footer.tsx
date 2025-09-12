@@ -11,7 +11,9 @@ export default function Footer() {
             className="bg-transparent py-[1.6rem] text-primaryBlack w-full outline-none border-none text-[1.2rem]"
             placeholder="Email Address..."
           />
-          <ArrowRight />
+          <button>
+            <ArrowRight />
+          </button>
         </div>
 
         <div className="font-medium flex gap-[1.8rem] text-[1.4rem] justify-center">

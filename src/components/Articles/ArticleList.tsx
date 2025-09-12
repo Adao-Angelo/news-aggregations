@@ -1,3 +1,5 @@
+import { Toaster } from "react-hot-toast";
+import { TOAST_OPTIONS } from "../../constant/toastOptions";
 import Article from "./Article";
 import useArticleList from "./hooks/useArticleList";
 import LoadingArticles from "./states/loadingArticles";
@@ -17,6 +19,7 @@ export default function ArticleList() {
           ))
         )}
       </section>
+      <Toaster toastOptions={TOAST_OPTIONS} />
     </>
   );
 }
