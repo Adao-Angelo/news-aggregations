@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { AuthProvider } from "./context/AuthContext";
 import NotFoundPage from "./pages/404";
 import About from "./pages/About";
-import Details from "./pages/Details";
+import ArticleDetailsPage from "./pages/ArticleDetailsPage";
 import Home from "./pages/Home";
 
 const queryClient = new QueryClient();
@@ -25,7 +25,7 @@ export default function App() {
             },
             {
               path: "/details/:id",
-              element: <Details></Details>,
+              element: <ArticleDetailsPage></ArticleDetailsPage>,
             },
             {
               path: "*",

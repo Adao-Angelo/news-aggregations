@@ -1,4 +1,4 @@
-export default function Loading() {
+export default function LoadingArticleDetails() {
   return (
     <div className="animate-pulse space-y-[6rem]">
       <div className="h-[4rem] bg-gray-300 rounded w-3/4"></div>
