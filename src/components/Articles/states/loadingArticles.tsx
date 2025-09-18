@@ -10,7 +10,7 @@ export default function LoadingArticles({ count }: LoadingArticlesProps) {
           key={index}
           className="flex flex-col items-start space-y-[2rem]  mb-6"
         >
-          <div className="w-full h-[30rem] bg-gray-300 animate-pulse rounded"></div>
+          <div className="w-full h-[30rem] bg-gray-300 animate-pulse rounded flex items-center justify-center"></div>
           <div className="w-60 h-5 bg-gray-300 animate-pulse rounded-md"></div>
           <div className="w-full h-[4rem] bg-gray-300 animate-pulse  "></div>
           <div className="w-72 h-7 bg-gray-300 animate-pulse rounded-md"></div>

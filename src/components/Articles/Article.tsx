@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { DEFAULT_IMAGE_URL } from "../../constant/defaultImageUrl";
+import { DEFAULT_IMAGE_URL } from "../../constant";
 import type { ArticleType } from "../../types";
 import { formatDate } from "../../utils/formatDate";
 import { textShorter } from "../../utils/ShortenText";

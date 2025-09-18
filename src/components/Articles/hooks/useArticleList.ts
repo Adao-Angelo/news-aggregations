@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useQuery } from "react-query";
 import { useSearchParams } from "react-router-dom";
-import { ARTICLES_PER_PAGE } from "../../../constant/articlesPerPage";
+import { ARTICLES_PER_PAGE } from "../../../constant";
 import { ArticlesServices } from "../../../services/articles";
 import type { ArticleType } from "../../../types";
 

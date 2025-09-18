@@ -2,7 +2,7 @@ import ArticleDetails from "../components/ArticleDetails/ArticleDetails";
 import { useArticleDetail } from "../components/ArticleDetails/hooks/useArticleDetails";
 import ErrorArticleDetails from "../components/ArticleDetails/states/ErrorArticleDetails";
 import LoadingArticleDetails from "../components/ArticleDetails/states/LoadingArticleDetails";
-import RootLayout from "./Layout";
+import RootLayout from "../components/Layout";
 
 export default function ArticleDetailsPage() {
   const { articles, isLoading, error, refetch } = useArticleDetail();

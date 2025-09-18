@@ -1,7 +1,7 @@
 import Articles from "../components/Articles/ArticleList";
-import Filter from "../components/filter.component";
+import Filter from "../components/Filter";
+import RootLayout from "../components/Layout";
 import Pagination from "../components/pagination";
-import RootLayout from "./Layout";
 export default function HomePage() {
   return (
     <RootLayout>

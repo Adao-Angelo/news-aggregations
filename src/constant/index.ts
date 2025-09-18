@@ -1,5 +1,8 @@
 import type { ToastOptions } from "react-hot-toast";
 
+export const ARTICLES_PER_PAGE = 6;
+export const DEFAULT_IMAGE_URL = "/file-not-found.avif";
+
 export const TOAST_OPTIONS: ToastOptions = {
   position: "bottom-center",
   style: {

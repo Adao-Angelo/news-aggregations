@@ -4,7 +4,7 @@ import type { ArticleType } from "../../types";
 import formatArticleBody from "../../utils/ArticleFormatter";
 import { formatDate } from "../../utils/formatDate";
 
-import { DEFAULT_IMAGE_URL } from "../../constant/defaultImageUrl";
+import { DEFAULT_IMAGE_URL } from "../../constant";
 
 interface ArticleDetailsProps {
   data:

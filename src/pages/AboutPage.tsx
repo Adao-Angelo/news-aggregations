@@ -1,4 +1,4 @@
-import RootLayout from "./Layout";
+import RootLayout from "../components/Layout";
 
 export default function AboutPage() {
   return (

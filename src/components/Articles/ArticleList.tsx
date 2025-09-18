@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import { TOAST_OPTIONS } from "../../constant/toastOptions";
+import { TOAST_OPTIONS } from "../../constant";
 import Article from "./Article";
 import useArticleList from "./hooks/useArticleList";
 import LoadingArticles from "./states/loadingArticles";

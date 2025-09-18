@@ -1,8 +1,11 @@
 import { FilterIcon, Settings } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { ModalContext } from "../context/ModalContext";
+import FilterModal from "./CustomFiltersModal";
 
 export default function Filter() {
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchValue, setSearchValue] = useState(
     searchParams.get("search") || ""
@@ -34,8 +37,14 @@ export default function Filter() {
     }
   };
 
+  const modal = useContext(ModalContext);
+
   return (
     <section>
+      <FilterModal
+        isFilterModalOpen={isFilterModalOpen}
+        setFilterModalIsOpen={setIsFilterModalOpen}
+      ></FilterModal>
       <div
         className={`flex justify-between ${
           searchParams.get("filterIsOpen") === "true"
@@ -56,7 +65,7 @@ export default function Filter() {
         <div className="flex items-center gap-[0.8rem]">
           <button
             onClick={changeFilterVisibility}
-            className={`px-[0.7rem] py-[1rem]  phone:p-[1rem] md:p-[1.6rem] text-[1rem] lg:text-[1.4rem] flex gap-[0.8rem] rounded-[0.3rem] md:rounded-[0.6rem] border-[0.2rem] ${
+            className={`px-[0.7rem] py-[1rem]  phone:p-[1rem] md:p-[1.4rem] text-[1rem] lg:text-[1.4rem] flex gap-[0.8rem] rounded-[0.3rem] md:rounded-[0.6rem] border-[0.2rem] ${
               searchParams.get("filterIsOpen") === "true"
                 ? "border-primaryBlack text-primaryBlack font-semibold"
                 : "border-stroke text-grayDark"
@@ -71,9 +80,16 @@ export default function Filter() {
             />
             Show filters
           </button>
-          <div className="p-[1rem] md:p-[1.6rem] rounded-[0.4rem] md:rounded-[0.6rem] text-white bg-primaryBlack ">
-            <Settings className="w-[2rem] h-[2rem]"></Settings>
-          </div>
+          <button
+            onClick={() => {
+              modal?.changeToTrueIsOneModalOpen();
+              setIsFilterModalOpen(true);
+            }}
+          >
+            <div className="p-[1rem] md:p-[1.6rem] rounded-[0.4rem] md:rounded-[0.6rem] text-white bg-primaryBlack ">
+              <Settings className="w-[2rem] h-[2rem]"></Settings>
+            </div>
+          </button>
         </div>
       </div>
 

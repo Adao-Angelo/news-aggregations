@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[1.4rem] mt-[6.6rem]">
-          © 2024 Adams John. All rights reserved
+          © 2023 Adão Ângelo João. All rights reserved
         </p>
       </footer>
     </>
