@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { ModalContext } from "../context/ModalContext";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
@@ -8,23 +9,25 @@ import UserSigned from "./userSigned";
 export default function Header() {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
-  const modal = useContext(ModalContext);
+  const modalContext = useContext(ModalContext);
 
   function openSignInModal() {
-    modal?.changeToTrueIsOneModalOpen();
+    modalContext?.changeToTrueIsOneModalOpen();
     setIsSignInModalOpen(true);
   }
 
   function openSignUpModal() {
-    modal?.changeToTrueIsOneModalOpen();
+    modalContext?.changeToTrueIsOneModalOpen();
     setIsSignUpModalOpen(true);
   }
+
+  const { currentUser } = useAuth();
 
   return (
     <div>
       <header
         className={`top-0 fixed w-screen lg:px-[16rem]   md:px-[10rem]  px-[4rem] bg-grayLight/80  backdrop-blur-[1rem] border-b border-primaryBlack py-[1.6rem] text-[1.4rem] flex justify-between items-center ${
-          modal?.isOneModalOpen ? "z-0" : "z-10"
+          modalContext?.isOneModalOpen ? "z-0" : "z-10"
         }`}
       >
         <menu className="flex items-center gap-[1.6rem] md:gap-[3.6rem]">
@@ -57,10 +60,10 @@ export default function Header() {
           </ul>
         </menu>
 
-        {false ? (
+        {currentUser ? (
           <UserSigned
-            name={"Edgar Paulo"}
-            email={"edgarpaulo@gmail.com"}
+            name={currentUser.displayName || ""}
+            email={currentUser.email || ""}
           ></UserSigned>
         ) : (
           <section className="flex items-center  font-medium gap-[0.8rem]">
