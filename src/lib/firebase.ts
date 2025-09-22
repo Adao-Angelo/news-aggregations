@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDOgtyEBtEvHmSGIGKE3co0VocgGzQfG8M",
+  apiKey: import.meta.env.VITE_FIREBASE_KEY,
   authDomain: "news-aggregations.firebaseapp.com",
   projectId: "news-aggregations",
   storageBucket: "news-aggregations.firebasestorage.app",
