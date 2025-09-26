@@ -1,6 +1,7 @@
 import { FilterIcon, Settings } from "lucide-react";
 import { useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { ModalContext } from "../context/ModalContext";
 import FilterModal from "./CustomFiltersModal";
 
@@ -38,6 +39,8 @@ export default function Filter() {
   };
 
   const modal = useContext(ModalContext);
+
+  const { currentUser } = useAuth();
 
   return (
     <section>
@@ -80,16 +83,19 @@ export default function Filter() {
             />
             Show filters
           </button>
-          <button
-            onClick={() => {
-              modal?.changeToTrueIsOneModalOpen();
-              setIsFilterModalOpen(true);
-            }}
-          >
-            <div className="p-[1rem] md:p-[1.6rem] rounded-[0.4rem] md:rounded-[0.6rem] text-white bg-primaryBlack ">
-              <Settings className="w-[2rem] h-[2rem]"></Settings>
-            </div>
-          </button>
+
+          {currentUser && (
+            <button
+              onClick={() => {
+                modal?.changeToTrueIsOneModalOpen();
+                setIsFilterModalOpen(true);
+              }}
+            >
+              <div className="p-[1rem] md:p-[1.6rem] rounded-[0.4rem] md:rounded-[0.6rem] text-white bg-primaryBlack ">
+                <Settings className="w-[2rem] h-[2rem]"></Settings>
+              </div>
+            </button>
+          )}
         </div>
       </div>
 
