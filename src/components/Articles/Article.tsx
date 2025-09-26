@@ -1,20 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import type { ArticleType } from "../types";
-import { formatDate } from "../utils/formatDate";
+import { DEFAULT_IMAGE_URL } from "../../constant";
+import type { ArticleType } from "../../types";
+import { formatDate } from "../../utils/formatDate";
+import { textShorter } from "../../utils/ShortenText";
 
 interface ArticlesPros {
   article: ArticleType;
 }
 
 export default function Article({ article }: ArticlesPros) {
-  const shortenText = (text: string, maxLength = 100) => {
-    if (!text) return "";
-    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
-  };
-
-  const defaultImageUrl = "/file-not-found.avif";
-
   return (
     <article className="">
       <div className="mb-[1.7rem] relative">
@@ -29,8 +24,8 @@ export default function Article({ article }: ArticlesPros) {
           className="w-full h-[31.5rem]  bg-center  object-cover border-[0.2rem] border-primaryBlack"
           src={
             article.image == "None"
-              ? defaultImageUrl
-              : article.image || defaultImageUrl
+              ? DEFAULT_IMAGE_URL
+              : article.image || DEFAULT_IMAGE_URL
           }
           alt={`Article of: ${article.title}`}
         />
@@ -41,7 +36,7 @@ export default function Article({ article }: ArticlesPros) {
         </Link>
         <div>
           <p className="text-[1.4rem] pt-[1.8rem] pb-[3.8rem]">
-            s{shortenText(article.description)}
+            s{textShorter(article.description)}
           </p>
         </div>
       </div>

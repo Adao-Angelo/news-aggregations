@@ -2,10 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AuthProvider } from "./context/AuthContext";
+import { ModalProvider } from "./context/ModalContext";
 import NotFoundPage from "./pages/404";
-import About from "./pages/About";
-import Details from "./pages/Details";
-import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import ArticleDetailsPage from "./pages/ArticleDetailsPage";
+import HomePage from "./pages/HomePage";
 
 const queryClient = new QueryClient();
 
@@ -13,26 +14,28 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <RouterProvider
-          router={createBrowserRouter([
-            {
-              path: "/",
-              element: <Home></Home>,
-            },
-            {
-              path: "/about",
-              element: <About></About>,
-            },
-            {
-              path: "/details/:id",
-              element: <Details></Details>,
-            },
-            {
-              path: "*",
-              element: <NotFoundPage />,
-            },
-          ])}
-        />
+        <ModalProvider>
+          <RouterProvider
+            router={createBrowserRouter([
+              {
+                path: "/",
+                element: <HomePage></HomePage>,
+              },
+              {
+                path: "/about",
+                element: <AboutPage></AboutPage>,
+              },
+              {
+                path: "/details/:id",
+                element: <ArticleDetailsPage></ArticleDetailsPage>,
+              },
+              {
+                path: "*",
+                element: <NotFoundPage />,
+              },
+            ])}
+          />
+        </ModalProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

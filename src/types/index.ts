@@ -1,3 +1,5 @@
+import { User } from "firebase/auth";
+
 // export type ArticleType = {
 //   id: number;
 //   href: string;
@@ -148,3 +150,22 @@ export type FiltersType = {
   title?: string;
   date?: string;
 };
+
+export interface AuthContextType {
+  currentUser: User | null;
+  signup: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
+  loginWithGoogle: () => Promise<void>;
+  loginWithGitHub: () => Promise<void>;
+  loginWithFacebook: () => Promise<void>;
+}
+
+export interface AuthProviderProps {
+  children: React.ReactNode;
+}
+
+export interface UserCredentials {
+  email: string;
+  password: string;
+}

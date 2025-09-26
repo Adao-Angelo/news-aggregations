@@ -1,6 +1,6 @@
-import RootLayout from "./Layout";
+import RootLayout from "../components/Layout";
 
-export default function About() {
+export default function AboutPage() {
   return (
     <>
       <RootLayout>

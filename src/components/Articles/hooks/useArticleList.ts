@@ -1,13 +1,12 @@
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { useQuery } from "react-query";
 import { useSearchParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import { ArticlesServices } from "../services/articles";
-import type { ArticleType } from "../types";
-import Article from "./article.component";
-import LoadingArticles from "./loadingArticles.component";
+import { ARTICLES_PER_PAGE } from "../../../constant";
+import { ArticlesServices } from "../../../services/articles";
+import type { ArticleType } from "../../../types";
 
-export default function Articles() {
+export default function useArticleList() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const updateUrlState = (key: string, value: string) => {
@@ -29,8 +28,6 @@ export default function Articles() {
     page: searchParams.get("page") || "1",
   };
 
-  const articlesPerPage = 6;
-
   const { data, isLoading, error } = useQuery<
     {
       status: string;
@@ -42,7 +39,7 @@ export default function Articles() {
     async () => {
       const response = await ArticlesServices.fetchArticles(filters);
 
-      const totalPages = Math.ceil(response.news.length / articlesPerPage);
+      const totalPages = Math.ceil(response.news.length / ARTICLES_PER_PAGE);
       updateUrlState(
         "hasNextPage",
         String(parseInt(filters.page, 10) < totalPages)
@@ -55,34 +52,20 @@ export default function Articles() {
       refetchOnMount: false,
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
+      onError: () => {
+        toast.error("Error on loading articles...");
+      },
     }
   );
-
-  if (error) {
-    toast.error("Error on list articles...");
-  }
 
   useEffect(() => {
     updateUrlState("hasNextPage", String(data?.status));
   }, [location.pathname]);
 
   const currentPage = parseInt(filters.page, 10);
-  const startIndex = (currentPage - 1) * articlesPerPage;
-  const endIndex = startIndex + articlesPerPage;
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const endIndex = startIndex + ARTICLES_PER_PAGE;
   const articlesToShow = data?.news.slice(startIndex, endIndex) || [];
 
-  return (
-    <>
-      <section className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-[2rem]">
-        {isLoading || error ? (
-          <LoadingArticles count={articlesPerPage} />
-        ) : (
-          articlesToShow.map((article) => (
-            <Article key={article.id} article={article} />
-          ))
-        )}
-        <ToastContainer />
-      </section>
-    </>
-  );
+  return { isLoading, error, ARTICLES_PER_PAGE, articlesToShow };
 }
