@@ -18,7 +18,7 @@ export default function Footer() {
 
         <div className="font-medium flex gap-[1.8rem] text-[1.4rem] justify-center">
           <a
-            href="https://www.linkedin.com/in/adaoangelojoao/"
+            href="https://www.linkedin.com/in/edgar-machado-92b757270/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
           </a>
           <a
-            href="https://github.com/Adao-Angelo"
+            href="https://github.com/edgarpaulomachado"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[1.4rem] mt-[6.6rem]">
-          © 2023 Adão Ângelo João. All rights reserved
+          © 2023 Edgar Paulo. All rights reserved
         </p>
       </footer>
     </>
